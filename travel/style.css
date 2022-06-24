@@ -1,0 +1,121 @@
+/*======================================== VARIABLES CSS ========================================*/
+:root {
+    /*======================================== COLORS ========================================*/
+    --color-white: #fff;
+    --color-blue: #0D606F;
+    --color-orange: #F2785C;
+
+    /*======================================== FONT AND TYPOGRAPHY ========================================*/
+    --font-logo: normal 600 32px/39px 'Magra', sans-serif;
+
+    --font-h2: normal 500 40px/53px 'Red Hat Text', sans-serif;
+    --font-destination: normal 500 32px/42px 'Red Hat Text', sans-serif;
+    --font-btn: normal 500 24px/32px 'Red Hat Text', sans-serif;
+    --font-nav-footer: normal 500 16px/21px 'Red Hat Text', sans-serif;
+
+    --font-h1: normal 700 80px/96px 'Aleo', sans-serif;
+    --font-hero-text: italic 700 20px/24px 'Aleo', sans-serif;
+    --font-read-more: normal 700 20px/24px 'Aleo', sans-serif;
+    --font-h3: normal 400 35px/42px 'Aleo', serif;
+    --font-text: normal 400 20px/24px 'Aleo', sans-serif;
+    --font-placeholder: italic 400 24px/29px 'Aleo', sans-serif;
+
+    --slower: .5s;
+    --normal: 1s;
+}
+
+/*======================================== BASE ========================================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    color: var(--color-white);
+}
+
+/*======================================== HEADER ========================================*/
+.header {
+    background: url("./assets/img/bg/header-bg.jpg") no-repeat center 0;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    gap: 197px;
+    z-index: 2;
+    background-color: rgba(242, 120, 92, 0.7);
+    box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
+}
+
+.logo {
+    display: flex;
+    justify-content: start;
+    gap: 6px;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.site-name {
+    font: var(--font-logo);
+}
+
+.nav-list {
+    margin-left: -30px;
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.nav-link {
+    font: var(--font-nav-footer);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.nav-link:hover {
+    color: var(--color-blue);
+}
+
+.sm-btn {
+    width: 103px;
+    height: 41px;
+    font: var(--font-nav-footer);
+    color: var(--color-white);
+    background: var(--color-blue);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(13, 96, 111, 0.16);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+button:hover {
+    color: var(--color-white);
+    background-color: var(--color-orange);
+}
