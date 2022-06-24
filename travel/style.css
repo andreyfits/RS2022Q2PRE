@@ -120,6 +120,7 @@ button:hover {
     background-color: var(--color-orange);
 }
 
+/*======================================== HERO ========================================*/
 .hero-container {
     height: 765px;
     display: flex;
@@ -186,7 +187,7 @@ button:hover {
     z-index: -1;
 }
 
-/*==================== MAIN CONTAINER ====================*/
+/*======================================== MAIN CONTAINER ========================================*/
 .main-container {
     display: flex;
     flex-direction: column;
@@ -194,3 +195,60 @@ button:hover {
     gap: 80px;
     padding: 0;
 }
+
+/*======================================== CONTAINERS ========================================*/
+.steps-container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 40px;
+}
+
+/*======================================== STEPS ========================================*/
+.section-title {
+    display: flex;
+    justify-content: center;
+    font: var(--font-h2);
+    color: var(--color-orange);
+}
+
+.step-items {
+    width: 1177px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.step-item:nth-child(2) {
+    margin-left: 71px;
+}
+
+.step-block {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    background: var(--color-orange);
+}
+
+.step-text {
+    font: var(--font-text);
+    color: var(--color-blue);
+}
+/*======================================== DESTINATIONS ========================================*/
+
+
+/*======================================== STORIES ========================================*/
+
+
+/*======================================== FOOTER ========================================*/
