@@ -1,0 +1,451 @@
+/*======================================== VARIABLES CSS ========================================*/
+:root {
+    /*======================================== COLORS ========================================*/
+    --color-white: #fff;
+    --color-blue: #0D606F;
+    --color-orange: #F2785C;
+
+    /*======================================== FONT AND TYPOGRAPHY ========================================*/
+    --font-logo: normal 600 32px/39px 'Magra', sans-serif;
+
+    --font-h2: normal 500 40px/53px 'Red Hat Text', sans-serif;
+    --font-destination: normal 500 32px/42px 'Red Hat Text', sans-serif;
+    --font-btn: normal 500 24px/32px 'Red Hat Text', sans-serif;
+    --font-nav-footer: normal 500 16px/21px 'Red Hat Text', sans-serif;
+
+    --font-h1: normal 700 80px/96px 'Aleo', sans-serif;
+    --font-hero-text: italic 700 20px/24px 'Aleo', sans-serif;
+    --font-read-more: normal 700 20px/24px 'Aleo', sans-serif;
+    --font-h3: normal 400 35px/42px 'Aleo', serif;
+    --font-text: normal 400 20px/24px 'Aleo', sans-serif;
+    --font-placeholder: italic 400 24px/29px 'Aleo', sans-serif;
+
+    --slower: .5s;
+    --normal: 1s;
+}
+
+/*======================================== BASE ========================================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    color: var(--color-white);
+}
+
+/*======================================== HEADER ========================================*/
+.header {
+    background: url("./assets/img/bg/header-bg.jpg") no-repeat center 0;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    gap: 197px;
+    z-index: 1;
+    background-color: rgba(242, 120, 92, 0.7);
+    box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
+}
+
+.logo {
+    display: flex;
+    justify-content: start;
+    gap: 6px;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.site-name {
+    font: var(--font-logo);
+}
+
+.nav-list {
+    margin-left: -30px;
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+
+.nav-link {
+    font: var(--font-nav-footer);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.nav-link:hover {
+    color: var(--color-blue);
+}
+
+/*======================================== BUTTONS ========================================*/
+.btn {
+    text-align: center;
+    font: var(--font-btn);
+    color: var(--color-white);
+    background: var(--color-blue);
+    box-shadow: 0 0 3px rgba(13, 96, 111, 0.08), 0 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.header-btn {
+    width: 103px;
+    height: 41px;
+    font: var(--font-nav-footer);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(13, 96, 111, 0.16);
+}
+
+.hero-btn {
+    width: 228px;
+    height: 59px;
+    font: var(--font-btn);
+}
+
+.more-btn {
+    width: 228px;
+    height: 59px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+button:hover {
+    color: var(--color-white);
+    background-color: var(--color-orange);
+}
+
+/*======================================== HERO ========================================*/
+.hero-container {
+    height: 765px;
+    display: flex;
+    margin-top: -90px;
+    background: url("./assets/img/bg/header-bg.jpg") no-repeat center;
+    background-size: auto auto;
+}
+
+.hero {
+    width: 892px;
+    display: flex;
+    flex-flow: column;
+    gap: 32px;
+    margin-top: 122px;
+}
+
+.hero-title {
+    font: var(--font-h1);
+}
+
+.hero-text {
+    font: var(--font-hero-text);
+}
+
+.search {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+}
+
+.search input {
+    margin: auto 40px;
+    display: flex;
+    font: var(--font-placeholder);
+    border: none;
+    background: transparent;
+}
+
+.search input::placeholder {
+    color: var(--color-orange);
+}
+
+.search .btn {
+    margin: 18px 19px 18px 0;
+}
+
+.section {
+    padding: 0 120px;
+    z-index: -1;
+}
+
+/*======================================== MAIN CONTAINER ========================================*/
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 80px;
+    padding: 0;
+}
+
+/*======================================== STEPS ========================================*/
+.steps-container {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 40px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font: var(--font-h2);
+    color: var(--color-orange);
+}
+
+.step-items {
+    width: 1177px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.step-item:nth-child(2) {
+    margin-left: 71px;
+}
+
+.step-block {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    background: var(--color-orange);
+}
+
+.step-text {
+    font: var(--font-text);
+    color: var(--color-blue);
+}
+
+/*======================================== DESTINATIONS ========================================*/
+.destinations-container {
+    margin-top: 17px;
+    padding: 0;
+}
+
+.slider {
+    margin: 46px 0 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-inner {
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.slide {
+    position: relative;
+}
+
+.slide img {
+    width: 800px;
+    height: 800px;
+    border-radius: 16px;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 40px;
+    left: 15px;
+    font: var(--font-destination);
+    text-transform: uppercase;
+}
+
+.slider-counter {
+    margin-top: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    height: 20px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(242, 120, 92, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.dot:hover {
+    background-color: var(--color-blue);
+}
+
+.active-dot {
+    background: var(--color-orange);
+}
+
+/*======================================== STORIES ========================================*/
+.stories-wrapper {
+    padding: 80px 0 40px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 400px 760px;
+    grid-template-rows: repeat(4, 250px);
+    column-gap: 40px;
+    row-gap: 30px;
+}
+
+.stories-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 4px 4px var(--color-blue));
+    border-radius: 16px;
+}
+
+.stories-description {
+    font: var(--font-text);
+    color: var(--color-blue);
+}
+
+.stories-subtitle {
+    margin-bottom: 24px;
+    font: var(--font-h3);
+    color: var(--color-blue);
+}
+
+.stories-link {
+    font: var(--font-read-more);
+    color: var(--color-blue);
+    text-decoration-line: underline;
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.stories-link:hover {
+    color: var(--color-orange);
+}
+
+.stories-container {
+    margin-bottom: -61px;
+    padding-bottom: 102px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    background: url("./assets/img/bg/footer-bg.jpg") top 93px center/100% no-repeat;
+}
+
+.stories-container:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 93px;
+    left: 0;
+    right: 0;
+    bottom: 61px;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+/*======================================== FOOTER ========================================*/
+footer {
+    position: relative;
+    height: 61px;
+}
+
+.footer-wrapper {
+    margin-bottom: 55px;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font: var(--font-nav-footer);
+}
+
+.footer-links a {
+    text-decoration: none;
+    transition: var(--slower);
+}
+
+.footer-links a:hover {
+    color: var(--color-orange);
+}
+
+.rss-link {
+    width: 75px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.footer-description {
+    margin-left: 22px;
+    font: var(--font-nav-footer);
+}
+
+.footer-social {
+    margin-top: 2px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 33.65px;
+    height: 33.65px;
+    transition: var(--slower);
+}
+
+.social-icon:hover {
+    transform: scale(1.25);
+}
