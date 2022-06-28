@@ -245,8 +245,84 @@ button:hover {
     font: var(--font-text);
     color: var(--color-blue);
 }
-/*======================================== DESTINATIONS ========================================*/
 
+/*======================================== DESTINATIONS ========================================*/
+.destinations-container {
+    margin-top: 17px;
+    padding: 0;
+}
+
+.slider {
+    margin-top: 46px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-inner {
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.slide {
+    position: relative;
+}
+
+.slide img {
+    width: 800px;
+    height: 800px;
+    border-radius: 16px;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 40px;
+    left: 15px;
+    font: var(--font-destination);
+    text-transform: uppercase;
+}
+
+.slider-counter {
+    margin-top: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    height: 20px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(242, 120, 92, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.dot:hover {
+    background-color: var(--color-blue);
+}
+
+.active-dot {
+    background: var(--color-orange);
+}
+
+.more-btn {
+    min-width: 228px;
+    margin: 40px auto 0;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
 
 /*======================================== STORIES ========================================*/
 
