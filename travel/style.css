@@ -391,3 +391,61 @@ button:hover {
 }
 
 /*======================================== FOOTER ========================================*/
+footer {
+    position: relative;
+    height: 61px;
+}
+
+.footer-wrapper {
+    margin-bottom: 55px;
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font: var(--font-nav-footer);
+}
+
+.footer-links a {
+    text-decoration: none;
+    transition: var(--slower);
+}
+
+.footer-links a:hover {
+    color: var(--color-orange);
+}
+
+.rss-link {
+    width: 75px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.footer-description {
+    margin-left: 22px;
+    font: var(--font-nav-footer);
+}
+
+.footer-social {
+    margin-top: 2px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 33.65px;
+    height: 33.65px;
+    transition: var(--slower);
+}
+
+.social-icon:hover {
+    transform: scale(1.25);
+}
