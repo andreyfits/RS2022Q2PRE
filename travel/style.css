@@ -30,7 +30,6 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    text-decoration: none;
 }
 
 html {
@@ -70,6 +69,7 @@ body {
     display: flex;
     justify-content: start;
     gap: 6px;
+    text-decoration: none;
     color: var(--color-white);
     cursor: pointer;
     transition: var(--slower);
@@ -94,6 +94,7 @@ body {
 .nav-link {
     font: var(--font-nav-footer);
     color: var(--color-white);
+    text-decoration: none;
     cursor: pointer;
     transition: var(--slower);
 }
@@ -196,17 +197,17 @@ button:hover {
     padding: 0;
 }
 
-/*======================================== CONTAINERS ========================================*/
+/*======================================== STEPS ========================================*/
 .steps-container {
     display: flex;
     flex-flow: column wrap;
     gap: 40px;
 }
 
-/*======================================== STEPS ========================================*/
 .section-title {
     display: flex;
     justify-content: center;
+    text-transform: uppercase;
     font: var(--font-h2);
     color: var(--color-orange);
 }
@@ -325,6 +326,66 @@ button:hover {
 }
 
 /*======================================== STORIES ========================================*/
+.stories-wrapper {
+    padding-top: 80px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 400px 760px;
+    grid-template-rows: repeat(4, 250px);
+    column-gap: 40px;
+    row-gap: 30px;
+}
 
+.stories-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 4px 4px var(--color-blue));
+    border-radius: 16px;
+}
+
+.stories-description {
+    font: var(--font-text);
+    color: var(--color-blue);
+}
+
+.stories-subtitle {
+    margin-bottom: 24px;
+    font: var(--font-h3);
+    color: var(--color-blue);
+}
+
+.stories-link {
+    font: var(--font-read-more);
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: var(--slower);
+}
+
+.stories-link:hover {
+    color: var(--color-orange);
+}
+
+.stories-container {
+    margin-bottom: -61px;
+    padding-bottom: 102px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    background: url("./assets/img/bg/footer-bg.jpg") top 93px center/100% no-repeat;
+}
+
+.stories-container:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 93px;
+    left: 0;
+    right: 0;
+    bottom: 61px;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
 
 /*======================================== FOOTER ========================================*/
