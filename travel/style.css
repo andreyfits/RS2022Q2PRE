@@ -29,7 +29,9 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    border: none;
     list-style: none;
+    text-decoration: none;
 }
 
 html {
@@ -69,7 +71,6 @@ body {
     display: flex;
     justify-content: start;
     gap: 6px;
-    text-decoration: none;
     color: var(--color-white);
     cursor: pointer;
     transition: var(--slower);
@@ -94,7 +95,6 @@ body {
 .nav-link {
     font: var(--font-nav-footer);
     color: var(--color-white);
-    text-decoration: none;
     cursor: pointer;
     transition: var(--slower);
 }
@@ -103,17 +103,39 @@ body {
     color: var(--color-blue);
 }
 
-.sm-btn {
-    width: 103px;
-    height: 41px;
-    font: var(--font-nav-footer);
+/*======================================== BUTTONS ========================================*/
+.btn {
+    text-align: center;
+    font: var(--font-btn);
     color: var(--color-white);
     background: var(--color-blue);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(13, 96, 111, 0.16);
-    border: none;
+    box-shadow: 0 0 3px rgba(13, 96, 111, 0.08), 0 2px 3px rgba(13, 96, 111, 0.16);
     border-radius: 10px;
     cursor: pointer;
     transition: var(--slower);
+}
+
+.header-btn {
+    width: 103px;
+    height: 41px;
+    font: var(--font-nav-footer);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(13, 96, 111, 0.16);
+}
+
+.hero-btn {
+    width: 228px;
+    height: 59px;
+    font: var(--font-btn);
+}
+
+.more-btn {
+    width: 228px;
+    height: 59px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 }
 
 button:hover {
@@ -164,19 +186,6 @@ button:hover {
 
 .search input::placeholder {
     color: var(--color-orange);
-}
-
-.btn {
-    padding: 14px 33px;
-    display: flex;
-    font: var(--font-btn);
-    color: var(--color-white);
-    background: var(--color-blue);
-    box-shadow: 0 0 3px rgba(13, 96, 111, 0.08), 0 2px 3px rgba(13, 96, 111, 0.16);
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    transition: var(--slower);
 }
 
 .search .btn {
@@ -254,7 +263,7 @@ button:hover {
 }
 
 .slider {
-    margin-top: 46px;
+    margin: 46px 0 40px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -317,17 +326,9 @@ button:hover {
     background: var(--color-orange);
 }
 
-.more-btn {
-    min-width: 228px;
-    margin: 40px auto 0;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-}
-
 /*======================================== STORIES ========================================*/
 .stories-wrapper {
-    padding-top: 80px;
+    padding: 80px 0 40px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 400px 760px;
@@ -358,6 +359,7 @@ button:hover {
 .stories-link {
     font: var(--font-read-more);
     color: var(--color-blue);
+    text-decoration-line: underline;
     cursor: pointer;
     transition: var(--slower);
 }
