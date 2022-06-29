@@ -39,13 +39,13 @@
 </header>
 <main>
     <div class="container main-container">
-        <section class="section hero-container" id="hero">
-            <div class="hero">
-                <h1 class="hero-title">Explore the beauty of the World</h1>
-                <p class="hero-text">Receive personalized recommendations for countries, hotels, activities and more</p>
-                <div class="search">
+        <section class="section preview-container" id="hero">
+            <div class="preview-wrapper">
+                <h1 class="preview-title">Explore the beauty of the World</h1>
+                <p class="preview-text">Receive personalized recommendations for countries, hotels, activities and more</p>
+                <div class="preview-search">
                     <input type="text" placeholder="What would you like to do?">
-                    <button class="btn hero-btn">Start Planning</button>
+                    <button class="btn preview-btn">Start Planning</button>
                 </div>
             </div>
         </section>
@@ -91,11 +91,11 @@
                         </div>
                     </div>
                 </div>
-                <ul class="slider-counter">
-                    <li class="dot"></li>
-                    <li class="dot active-dot"></li>
-                    <li class="dot"></li>
-                </ul>
+                <div class="slider-counter">
+                    <label class="dot"></label>
+                    <label class="dot active-dot"></label>
+                    <label class="dot"></label>
+                </div>
             </div>
             <button class="btn more-btn">
                 <img src="./assets/svg/arrow-right.svg" alt="arrow">Find More
@@ -137,7 +137,14 @@
 </main>
 <footer class="footer">
     <div class="container footer-container">
-        <div class="space"></div>
+        <div class="footer-links">
+            <a href="https://github.com/andreyfits" class="footer-link" target="_blank">
+                <img src="./assets/svg/social/github.svg" alt="github" class="social-icon">
+            </a>
+            <a href="https://rs.school/js-stage0/" target="_blank">
+                <img src="./assets/svg/social/rs_school.svg" alt="rss" class="rss-link">
+            </a>
+        </div>
         <div class="footer-description">All Rights Reserved © Travel Portal</div>
         <div class="social-list">
             <ul class="social-items">
