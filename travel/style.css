@@ -14,7 +14,7 @@
     --font-nav-footer: normal 500 16px/21px 'Red Hat Text', sans-serif;
 
     --font-h1: normal 700 80px/96px 'Aleo', sans-serif;
-    --font-hero-text: italic 700 20px/24px 'Aleo', sans-serif;
+    --font-preview-text: italic 700 20px/24px 'Aleo', sans-serif;
     --font-read-more: normal 700 20px/24px 'Aleo', sans-serif;
     --font-h3: normal 400 35px/42px 'Aleo', serif;
     --font-text: normal 400 20px/24px 'Aleo', sans-serif;
@@ -128,7 +128,7 @@ body {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(13, 96, 111, 0.16);
 }
 
-.hero-btn {
+.preview-btn {
     width: 228px;
     height: 59px;
     font: var(--font-btn);
@@ -148,8 +148,8 @@ button:hover {
     background-color: var(--color-orange);
 }
 
-/*======================================== HERO ========================================*/
-.hero-container {
+/*======================================== PREVIEW ========================================*/
+.preview-container {
     height: 765px;
     display: flex;
     background: url("./assets/img/bg/header-bg.jpg") no-repeat center;
@@ -159,7 +159,7 @@ button:hover {
     padding: 0 120px;
 }
 
-.hero {
+.preview-wrapper {
     width: 892px;
     display: flex;
     flex-flow: column;
@@ -167,15 +167,15 @@ button:hover {
     margin-top: 122px;
 }
 
-.hero-title {
+.preview-title {
     font: var(--font-h1);
 }
 
-.hero-text {
-    font: var(--font-hero-text);
+.preview-text {
+    font: var(--font-preview-text);
 }
 
-.search {
+.preview-search {
     margin-top: 14px;
     padding: 18px;
     height: 95px;
@@ -185,14 +185,14 @@ button:hover {
     border-radius: 16px;
 }
 
-.search input {
+.preview-search input {
     padding: 18px 18px 18px 24px;
     font: var(--font-placeholder);
     border: none;
     background: transparent;
 }
 
-.search input::placeholder {
+.preview-search input::placeholder {
     color: var(--color-orange);
 }
 
