@@ -34,6 +34,10 @@
     text-decoration: none;
 }
 
+img {
+    vertical-align: top;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -391,34 +395,23 @@ button:hover {
 }
 
 /*======================================== FOOTER ========================================*/
-footer {
+.footer {
     position: relative;
     height: 61px;
-}
-
-.footer-wrapper {
-    margin-bottom: 55px;
-    padding-top: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer-links {
+.footer-container {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    font: var(--font-nav-footer);
 }
 
-.footer-links a {
-    text-decoration: none;
-    transition: var(--slower);
-}
-
-.footer-links a:hover {
-    color: var(--color-orange);
+.space {
+    flex: 0 0 140.96px;
 }
 
 .rss-link {
@@ -429,20 +422,20 @@ footer {
 }
 
 .footer-description {
-    margin-left: 22px;
     font: var(--font-nav-footer);
 }
 
-.footer-social {
-    margin-top: 2px;
+.social-list {
+    flex: 0 0 140.96px;
+}
+
+.social-items {
     display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .social-icon {
-    width: 33.65px;
-    height: 33.65px;
     transition: var(--slower);
 }
 
