@@ -34,6 +34,10 @@
     text-decoration: none;
 }
 
+img {
+    vertical-align: top;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -48,7 +52,9 @@ body {
 
 /*======================================== HEADER ========================================*/
 .header {
-    background: url("./assets/img/bg/header-bg.jpg") no-repeat center 0;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
 }
 
 .container {
@@ -63,7 +69,7 @@ body {
     height: 90px;
     gap: 197px;
     z-index: 1;
-    background-color: rgba(242, 120, 92, 0.7);
+    background: rgba(242, 120, 92, 0.7);
     box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
 }
 
@@ -139,7 +145,6 @@ body {
 }
 
 button:hover {
-    color: var(--color-white);
     background-color: var(--color-orange);
 }
 
@@ -147,9 +152,11 @@ button:hover {
 .hero-container {
     height: 765px;
     display: flex;
-    margin-top: -90px;
     background: url("./assets/img/bg/header-bg.jpg") no-repeat center;
-    background-size: auto auto;
+}
+
+.section {
+    padding: 0 120px;
 }
 
 .hero {
@@ -170,6 +177,8 @@ button:hover {
 
 .search {
     margin-top: 14px;
+    padding: 18px;
+    height: 95px;
     display: flex;
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.7);
@@ -177,8 +186,7 @@ button:hover {
 }
 
 .search input {
-    margin: auto 40px;
-    display: flex;
+    padding: 18px 18px 18px 24px;
     font: var(--font-placeholder);
     border: none;
     background: transparent;
@@ -186,15 +194,6 @@ button:hover {
 
 .search input::placeholder {
     color: var(--color-orange);
-}
-
-.search .btn {
-    margin: 18px 19px 18px 0;
-}
-
-.section {
-    padding: 0 120px;
-    z-index: -1;
 }
 
 /*======================================== MAIN CONTAINER ========================================*/
@@ -391,34 +390,23 @@ button:hover {
 }
 
 /*======================================== FOOTER ========================================*/
-footer {
+.footer {
     position: relative;
     height: 61px;
-}
-
-.footer-wrapper {
-    margin-bottom: 55px;
-    padding-top: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer-links {
+.footer-container {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    font: var(--font-nav-footer);
 }
 
-.footer-links a {
-    text-decoration: none;
-    transition: var(--slower);
-}
-
-.footer-links a:hover {
-    color: var(--color-orange);
+.space {
+    flex: 0 0 140.96px;
 }
 
 .rss-link {
@@ -429,20 +417,20 @@ footer {
 }
 
 .footer-description {
-    margin-left: 22px;
     font: var(--font-nav-footer);
 }
 
-.footer-social {
-    margin-top: 2px;
+.social-list {
+    flex: 0 0 140.96px;
+}
+
+.social-items {
     display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .social-icon {
-    width: 33.65px;
-    height: 33.65px;
     transition: var(--slower);
 }
 
