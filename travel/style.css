@@ -405,8 +405,15 @@ button:hover {
     align-items: center;
 }
 
-.space {
-    flex: 0 0 140.96px;
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a {
+    transition: var(--slower);
 }
 
 .rss-link {
@@ -417,6 +424,7 @@ button:hover {
 }
 
 .footer-description {
+    margin-left: 22px;
     font: var(--font-nav-footer);
 }
 
@@ -431,6 +439,8 @@ button:hover {
 }
 
 .social-icon {
+    width: 33.65px;
+    height: 33.65px;
     transition: var(--slower);
 }
 
