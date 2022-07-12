@@ -131,13 +131,13 @@ body {
 }
 
 .preview-btn {
-    width: 228px;
+    min-width: 228px;
     height: 59px;
     font: var(--font-btn);
 }
 
 .more-btn {
-    width: 228px;
+    min-width: 228px;
     height: 59px;
     margin: 0 auto;
     display: flex;
@@ -277,7 +277,6 @@ button:hover {
 }
 
 .slider-inner {
-    height: 800px;
     display: flex;
     justify-content: center;
     gap: 60px;
@@ -497,5 +496,58 @@ button:hover {
         -webkit-line-clamp: 8;
         display: -webkit-box;
         -webkit-box-orient: vertical;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .nav-list {
+        flex-flow: column wrap;
+        gap: 0;
+    }
+
+    .preview-title {
+        font-size: 66px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .slider-inner {
+        gap: 30px;
+    }
+
+    .slide img {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .stories-wrapper {
+        column-gap: 25px;
+    }
+
+    .stories-subtitle {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+
+    .stories-description {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .stories-link {
+        font-size: 18px;
+    }
+
+    .preview-btn,
+    .more-btn {
+        font-size: 20px;
+    }
+
+    .more-btn {
+        height: 50px;
+        min-width: 195px;
     }
 }
