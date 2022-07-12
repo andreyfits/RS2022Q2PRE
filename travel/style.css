@@ -52,25 +52,26 @@ body {
 
 /*======================================== HEADER ========================================*/
 .header {
-    position: absolute;
-    width: 100%;
+    position: relative;
+    height: 90px;
+    margin: 0 auto;
     z-index: 10;
+    display: flex;
+    background-color: rgba(242, 120, 92, 0.7);
+    box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
 }
 
 .container {
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 120px;
 }
 
 .header-container {
+    width: 100vw;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 90px;
-    gap: 197px;
-    z-index: 1;
-    background: rgba(242, 120, 92, 0.7);
-    box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
 }
 
 .logo {
@@ -96,6 +97,7 @@ body {
     display: flex;
     align-items: center;
     gap: 42px;
+    flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -150,9 +152,10 @@ button:hover {
 
 /*======================================== PREVIEW ========================================*/
 .preview-container {
+    margin-top: -90px;
+    padding-top: 90px;
     height: 765px;
-    display: flex;
-    background: url("./assets/img/bg/header-bg.jpg") no-repeat center;
+    background: url("./assets/img/bg/header-bg.jpg") top center/cover no-repeat;
 }
 
 .section {
@@ -225,7 +228,6 @@ button:hover {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .step-item {
@@ -330,8 +332,8 @@ button:hover {
     padding: 80px 0 40px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 400px 760px;
-    grid-template-rows: repeat(4, 250px);
+    grid-template-columns: minmax(auto, 400px) minmax(auto, 760px);
+    grid-template-rows: repeat(4, minmax(auto, 250px));
     column-gap: 40px;
     row-gap: 30px;
 }
@@ -393,9 +395,6 @@ button:hover {
 .footer {
     position: relative;
     height: 61px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .footer-container {
@@ -446,4 +445,57 @@ button:hover {
 
 .social-icon:hover {
     transform: scale(1.25);
+}
+
+/*======================================== MEDIA QUERIES ======================================== */
+@media screen and (max-width: 1439px) {
+    .header-container,
+    .preview-container,
+    .steps-container,
+    .stories-container,
+    .footer-container {
+        padding: 0 15px;
+    }
+
+    .nav-list {
+        margin: 0 25px;
+    }
+
+    .preview-wrapper {
+        width: 100%;
+    }
+
+    .step-items {
+        width: 100%;
+    }
+
+    .step-item {
+        width: 31%;
+    }
+
+    .step-text {
+        text-align: center;
+    }
+
+    .step-item:nth-child(2) {
+        margin-left: 0;
+    }
+
+    .stories-container {
+        padding-bottom: 102px;
+        background-size: cover;
+    }
+
+    .stories-subtitle {
+        margin-bottom: 5px;
+    }
+
+    .stories-description {
+        font-size: 20px;
+        line-height: 22px;
+        overflow: hidden;
+        -webkit-line-clamp: 8;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
 }
