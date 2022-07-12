@@ -551,3 +551,90 @@ button:hover {
         min-width: 195px;
     }
 }
+
+@media screen and (max-width: 640px) {
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .preview-container {
+        height: 400px;
+    }
+
+    .preview-title {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .preview-wrapper {
+        gap: 20px;
+    }
+
+    .preview-search {
+        height: 65px;
+        align-items: center;
+    }
+
+    .preview-search input {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .preview-btn {
+        min-width: 150px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .preview-text {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .site-name {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .step-block {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0;
+    }
+
+    .step-block img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .step-text {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .stories-wrapper {
+        grid-template-rows: repeat(4, minmax(auto, 200px));
+        column-gap: 10px;
+    }
+
+    .stories-subtitle {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .stories-description {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .stories-link {
+        font-size: 12px;
+    }
+
+    .footer-description {
+        font-size: 12px;
+    }
+}
