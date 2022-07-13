@@ -50,6 +50,16 @@ body {
     color: var(--color-white);
 }
 
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+
+.section {
+    padding: 0 120px;
+}
+
 /*======================================== HEADER ========================================*/
 .header {
     position: relative;
@@ -61,12 +71,6 @@ body {
     box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
 }
 
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 120px;
-}
-
 .header-container {
     width: 100vw;
     display: flex;
@@ -76,7 +80,7 @@ body {
 
 .logo {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 6px;
     color: var(--color-white);
     cursor: pointer;
@@ -131,8 +135,8 @@ body {
 }
 
 .preview-btn {
-    min-width: 228px;
-    height: 59px;
+    padding: 14px 33px;
+    display: flex;
     font: var(--font-btn);
 }
 
@@ -151,23 +155,18 @@ button:hover {
 }
 
 /*======================================== PREVIEW ========================================*/
+
 .preview-container {
     margin-top: -90px;
     padding-top: 90px;
-    height: 765px;
     background: url("./assets/img/bg/header-bg.jpg") top center/cover no-repeat;
 }
 
-.section {
-    padding: 0 120px;
-}
-
 .preview-wrapper {
-    width: 892px;
+    padding: 32px 428px 254px 120px;
     display: flex;
     flex-flow: column;
     gap: 32px;
-    margin-top: 122px;
 }
 
 .preview-title {
@@ -180,8 +179,6 @@ button:hover {
 
 .preview-search {
     margin-top: 14px;
-    padding: 18px;
-    height: 95px;
     display: flex;
     justify-content: space-between;
     background: rgba(255, 255, 255, 0.7);
@@ -189,10 +186,14 @@ button:hover {
 }
 
 .preview-search input {
-    padding: 18px 18px 18px 24px;
+    margin-left: 41px;
     font: var(--font-placeholder);
     border: none;
     background: transparent;
+}
+
+.preview-search .preview-btn {
+    margin: 18px 18px 18px 0;
 }
 
 .preview-search input::placeholder {
@@ -216,8 +217,7 @@ button:hover {
 }
 
 .section-title {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     text-transform: uppercase;
     font: var(--font-h2);
     color: var(--color-orange);
@@ -449,7 +449,6 @@ button:hover {
 /*======================================== MEDIA QUERIES ======================================== */
 @media screen and (max-width: 1439px) {
     .header-container,
-    .preview-container,
     .steps-container,
     .stories-container,
     .footer-container {
@@ -457,11 +456,11 @@ button:hover {
     }
 
     .nav-list {
-        margin: 0 25px;
+        margin-left: 0;
     }
 
     .preview-wrapper {
-        width: 100%;
+        padding: 40px;
     }
 
     .step-items {
@@ -550,6 +549,10 @@ button:hover {
         height: 50px;
         min-width: 195px;
     }
+
+    .footer-description {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -557,33 +560,33 @@ button:hover {
         font-size: 12px;
     }
 
-    .preview-container {
-        height: 400px;
+    .header-btn {
+        width: 80px;
+        font-size: 14px;
     }
 
     .preview-title {
-        font-size: 40px;
-        line-height: 48px;
+        font-size: 38px;
+        line-height: 46px;
     }
 
     .preview-wrapper {
-        gap: 20px;
+        padding: 15px;
     }
 
     .preview-search {
-        height: 65px;
-        align-items: center;
+        margin: 65px 15px 60px 15px;
     }
 
     .preview-search input {
+        margin-left: 16px;
         font-size: 14px;
         line-height: 17px;
     }
 
     .preview-btn {
-        min-width: 150px;
-        height: 40px;
-        font-size: 12px;
+        padding: 0 14px;
+        font-size: 11px;
     }
 
     .preview-text {
@@ -591,7 +594,7 @@ button:hover {
     }
 
     .section-title {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .site-name {
@@ -635,6 +638,7 @@ button:hover {
     }
 
     .footer-description {
-        font-size: 12px;
+        font-size: 10px;
+        line-height: 14px;
     }
 }
