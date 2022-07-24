@@ -787,6 +787,111 @@ button:hover {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .login {
+        width: 340px;
+        height: 400px;
+        padding: 15px 25px;
+        top: -600px;
+    }
+
+    .login--register {
+        height: 280px;
+    }
+
+    .login.login--active {
+        top: calc(50vh - (400px / 2));
+    }
+
+    .login__title {
+        margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .login__list {
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+
+    .item-login {
+        height: 36px;
+    }
+
+    .item-login__ico {
+        width: 14px;
+        height: 14px;
+    }
+
+    .item-login__text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .login__line {
+        margin-bottom: 5px;
+        font-size: 14px;
+        line-height: 12px;
+    }
+
+    .login__form {
+        margin-bottom: 5px;
+    }
+
+    .login__form--register {
+        margin-bottom: 15px;
+    }
+
+    .form-login__label {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .form-login__input {
+        margin-bottom: 5px;
+        height: 36px;
+    }
+
+    .form-login__button {
+        margin-top: 5px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .login__password-forgot-link {
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .login__line-only {
+        margin-bottom: 10px;
+    }
+
+    .login__question-register {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .register__link {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .login {
+        width: 270px;
+        height: 400px;
+        padding: 10px 20px;
+    }
+
+    .login--register {
+        height: 270px;
+    }
+}
+
 @media screen and (max-width: 640px) {
     .nav-link {
         font-size: 12px;
