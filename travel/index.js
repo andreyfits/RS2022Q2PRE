@@ -1,6 +1,3 @@
-alert(`Спасибо, что подождали. Всё доделал.`)
-
-
 let requirements = `Итоговая оценка: 85/75.
 1. Вёрстка соответствует макету. Ширина экрана 390px +48
     - блок header +6
@@ -53,3 +50,86 @@ cover.addEventListener('click', (e) => {
         closeMenu();
     }
 })
+
+const loginBtn = document.querySelector('#btn-login');
+const accountLink = document.querySelector('.account');
+const login = document.querySelector('.login');
+const wrapper = document.querySelector('.login__wrapper');
+const darkenArea = document.querySelector('.darken-area');
+const logInBtn = document.querySelector('.form-login__button');
+const loginForm = document.querySelector('.form-login');
+
+const registerLink = document.querySelector('#registerLink');
+const loginList = document.querySelector('.login__list');
+const loginLine = document.querySelector('.login__line');
+const forgotLink = document.querySelector('.login__password-forgot-link');
+const loginTitle = document.querySelector('.login__title');
+const logInQuestionRegister = document.querySelector('.login__question-register');
+
+function toggleLogin() {
+    if (loginTitle.innerText === 'Create account') {
+        editCss()
+        logIn()
+    }
+
+    logInWrapper()
+
+    login.classList.toggle('login--active');
+    darkenArea.classList.toggle('darken');
+}
+
+loginBtn.addEventListener('click', toggleLogin);
+accountLink.addEventListener('click', toggleLogin);
+darkenArea.addEventListener('click', (e) => {
+    if (e.target === darkenArea) {
+        toggleLogin();
+    }
+});
+loginForm.addEventListener('submit', (e) => {
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+
+    alert('Email: ' + email + '\nPassword: '  + password);
+    e.preventDefault();
+    loginForm.reset();
+    toggleLogin();
+});
+
+registerLink.addEventListener('click', editCss);
+registerLink.addEventListener('click', signUp);
+
+function editCss() {
+    logInWrapper();
+    setTimeout(logInWrapper, 500);
+    login.classList.toggle('login--register');
+    loginList.style.display = 'none';
+    loginLine.style.display = 'none';
+    forgotLink.style.display = 'none';
+    loginForm.classList.toggle('login__form--register');
+    logInQuestionRegister.classList.toggle('login__question-register--register');
+    logInWrapper();
+    logInWrapper();
+}
+
+function logInWrapper() {
+    wrapper.classList.toggle('login__wrapper--register');
+}
+
+function signUp() {
+    loginTitle.innerText = 'Create account';
+    logInBtn.innerText = 'Sign Up';
+    logInQuestionRegister.innerHTML = 'Don’t have an account? <a id="logInLink" href="#" class="register__link">Log In</a>';
+    document.querySelector('#logInLink').addEventListener('click', editCss);
+    document.querySelector('#logInLink').addEventListener('click', logIn);
+}
+
+function logIn() {
+    loginTitle.innerText = 'Log in to your account';
+    logInBtn.innerText = 'Sign In';
+    loginList.style.display = 'flex';
+    loginLine.style.display = 'flex';
+    forgotLink.style.display = 'flex';
+    logInQuestionRegister.innerHTML = 'Don’t have an account? <a id="registerLink" href="#" class="register__link">Register</a>';
+    document.querySelector('#registerLink').addEventListener('click', editCss);
+    document.querySelector('#registerLink').addEventListener('click', signUp);
+}
