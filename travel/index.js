@@ -51,6 +51,7 @@ cover.addEventListener('click', (e) => {
     }
 })
 
+/*======================================== POPUP LOGIN ========================================*/
 const loginBtn = document.querySelector('#btn-login');
 const accountLink = document.querySelector('.account');
 const login = document.querySelector('.login');
@@ -133,3 +134,63 @@ function logIn() {
     document.querySelector('#registerLink').addEventListener('click', editCss);
     document.querySelector('#registerLink').addEventListener('click', signUp);
 }
+
+/*======================================== SLIDER ========================================*/
+const dots = document.querySelectorAll('.dot');
+const next = document.querySelector('.right-arrow');
+const previous = document.querySelector('.left-arrow');
+const slideWindow = document.querySelector('.slider-inner');
+const slides = document.querySelectorAll('.slide');
+const slide = document.querySelector('.slide');
+
+let shift = 0;
+
+function slideMove(shift, i) {
+    slideWindow.style.left = -shift + 'px';
+    dots.forEach(el => el.classList.remove('active-dot'));
+    dots[i].classList.add('active-dot');
+}
+
+slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => {
+        slides.forEach(slide => {
+            shift = (slide.clientWidth + slide.clientWidth * 0.0625) * (i - 1);
+        });
+        slideMove(shift, i)
+    })
+})
+
+dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+        slides.forEach(slide => {
+            shift = (slide.clientWidth + slide.clientWidth * 0.0625) * (i - 1);
+        });
+        slideMove(shift, i)
+    })
+})
+
+next.addEventListener('click', () => {
+    shift += slide.clientWidth + slide.clientWidth * 0.0625;
+    if (shift > slide.clientWidth + slide.clientWidth * 0.0625) {
+        shift = -(slide.clientWidth + slide.clientWidth * 0.0625);
+    }
+    dots.forEach((dot, i) => {
+        if (dot.classList.contains('active-dot')) {
+            (i === 2) ? ind = 0 : ind = i + 1;
+        }
+    })
+    slideMove(shift, ind);
+})
+
+previous.addEventListener('click', () => {
+    shift -= slide.clientWidth + slide.clientWidth * 0.0625;
+    if (shift < -(slide.clientWidth + slide.clientWidth * 0.0625)) {
+        shift = slide.clientWidth + slide.clientWidth * 0.0625;
+    }
+    dots.forEach((dot, i) => {
+        if (dot.classList.contains('active-dot')) {
+            (i === 0) ? ind = 2 : ind = i - 1;
+        }
+    })
+    slideMove(shift, ind);
+})

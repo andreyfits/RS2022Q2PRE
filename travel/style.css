@@ -304,24 +304,27 @@ button:hover {
 }
 
 .slider-inner {
+    width: 2520px;
+    position: relative;
+    left: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 60px;
+    transition: all var(--slower) ease 0s;
 }
 
 .slide {
-    position: relative;
+    width: 800px;
+    height: 800px;
 }
 
 .slide img {
-    width: 800px;
-    height: 800px;
     border-radius: 16px;
 }
 
 .slide-text {
-    position: absolute;
-    bottom: 40px;
+    position: relative;
+    bottom: 82px;
     left: 15px;
     font: var(--font-destination);
     text-transform: uppercase;
@@ -746,12 +749,16 @@ button:hover {
     }
 
     .slider-inner {
-        gap: 30px;
+        width: 1260px;
+    }
+
+    .slide {
+        width: 400px;
+        height: 400px;
     }
 
     .slide img {
-        width: 400px;
-        height: 400px;
+        width: 100%;
         object-fit: cover;
     }
 
@@ -958,6 +965,10 @@ button:hover {
     .step-block img {
         width: 50%;
         height: 50%;
+    }
+
+    .slider-inner {
+        gap: 30px;
     }
 
     .step-text {
@@ -1211,17 +1222,14 @@ button:hover {
         margin: 21px 0 10px 0;
     }
 
-    .slider-wrapper {
-        align-items: flex-start;
-        padding-left: 15px;
-    }
-
     .slider-inner {
-        gap: 15px;
+        width: 300vw;
+        justify-content: space-evenly;
+        gap: 0;
     }
 
     .slide {
-        width: 360px;
+        width: calc(100vw - 30px);
         height: 210px;
     }
 
@@ -1260,10 +1268,6 @@ button:hover {
         cursor: pointer;
         transition: var(--slower);
         transform: rotate(180deg);
-    }
-
-    .inactive-arrow {
-        filter: opacity(0.5);
     }
 
     .slider-counter {
