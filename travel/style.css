@@ -27,7 +27,7 @@
     --font-step-stories-text: normal 400 20px/24px 'Aleo', sans-serif;
     --font-placeholder: italic 400 24px/28.8px 'Aleo', sans-serif;
 
-    --slower: .5s;
+    --faster: .5s;
     --normal: 1s;
 }
 
@@ -91,7 +91,7 @@ body {
     gap: 6px;
     color: var(--color-white);
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .logo img {
@@ -115,7 +115,7 @@ body {
     font: var(--font-nav-footer);
     color: var(--color-white);
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .nav-link:hover {
@@ -147,7 +147,7 @@ body {
     box-shadow: 0 0 3px rgba(13, 96, 111, 0.08), 0 2px 3px rgba(13, 96, 111, 0.16);
     border-radius: 10px;
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .header-btn {
@@ -310,7 +310,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     gap: 60px;
-    transition: all var(--slower) ease 0s;
+    transition: all var(--faster) ease 0s;
 }
 
 .slide {
@@ -345,7 +345,7 @@ button:hover {
     background: rgba(242, 120, 92, 0.5);
     border-radius: 50%;
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .dot:hover {
@@ -395,7 +395,7 @@ button:hover {
     color: var(--color-blue);
     text-decoration-line: underline;
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .stories-link:hover {
@@ -445,7 +445,7 @@ button:hover {
 }
 
 .footer-links a {
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .rss-link {
@@ -473,7 +473,7 @@ button:hover {
 .social-icon {
     width: 33.65px;
     height: 33.65px;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .social-icon:hover {
@@ -503,7 +503,7 @@ button:hover {
 }
 
 .login.login--active {
-    transition: var(--slower);
+    transition: var(--faster);
     top: calc(50vh - (660px / 2));
 }
 
@@ -518,7 +518,7 @@ button:hover {
 .login__wrapper--register {
     visibility: visible;
     opacity: 1;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .login__title {
@@ -640,7 +640,7 @@ button:hover {
 .login__password-forgot-link:hover,
 .register__link:hover {
     text-decoration-color: var(--color-orange);
-    transition: all var(--slower) ease 0s;
+    transition: all var(--faster) ease 0s;
 }
 
 .login__line-only {
@@ -675,7 +675,7 @@ button:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 /*======================================== MEDIA QUERIES ======================================== */
@@ -1072,7 +1072,7 @@ button:hover {
         height: 17px;
         flex-direction: column;
         justify-content: space-between;
-        transition-duration: var(--slower);
+        transition-duration: var(--faster);
     }
 
     .line {
@@ -1084,7 +1084,7 @@ button:hover {
     }
 
     .toggle:hover {
-        transition-duration: var(--slower);
+        transition-duration: var(--faster);
         opacity: .75;
         cursor: pointer;
     }
@@ -1261,12 +1261,12 @@ button:hover {
 
     .right-arrow {
         cursor: pointer;
-        transition: var(--slower);
+        transition: var(--faster);
     }
 
     .left-arrow {
         cursor: pointer;
-        transition: var(--slower);
+        transition: var(--faster);
         transform: rotate(180deg);
     }
 
