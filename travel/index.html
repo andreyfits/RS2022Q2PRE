@@ -34,8 +34,7 @@
                 </li>
             </ul>
         </nav>
-        <button class="btn header-btn">Login</button>
-        <div class="darken"></div>
+        <button id="btn-login" class="btn header-btn">Login</button>
     </div>
 </header>
 <main>
@@ -101,12 +100,12 @@
                     </div>
                 </div>
                 <div class="slider-arrows">
-                    <img src="assets/svg/slider-arrow.svg" alt="slider-arrow" class="left-arrow inactive-arrow">
+                    <img src="assets/svg/slider-arrow.svg" alt="slider-arrow" class="left-arrow">
                     <img src="assets/svg/slider-arrow.svg" alt="slider-arrow" class="right-arrow">
                 </div>
                 <div class="slider-counter">
-                    <label class="dot active-dot"></label>
                     <label class="dot"></label>
+                    <label class="dot active-dot"></label>
                     <label class="dot"></label>
                 </div>
             </div>
@@ -212,7 +211,7 @@
                     <a href="#stories" class="nav-link">Travel Stories</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#header" class="nav-link">Account</a>
+                    <a href="#" class="nav-link account">Account</a>
                 </li>
                 <li class="nav-item">
                     <a href="#social-media" class="nav-link">Social Media</a>
@@ -221,6 +220,35 @@
         </nav>
     </div>
 </div>
-<script type="module" src="./index.js"></script>
+<div class="login">
+    <div class="login__wrapper">
+        <h2 class="login__title">Log in to your account</h2>
+        <div class="login__list">
+            <a href="#" class="login__item item-login">
+                <img class="item-login__ico" src="./assets/svg/social/facebook.svg" alt="facebook">
+                <span class="item-login__text">Sign In with Facebook</span>
+            </a>
+            <a href="#" class="login__item item-login">
+                <img class="item-login__ico" src="./assets/svg/social/google.svg" alt="google">
+                <span class="item-login__text item-login__text_blue">Sign In with Google</span>
+            </a>
+        </div>
+        <span class="login__line">or</span>
+        <form id="login-form" class="login__form form-login" action="#" method="post">
+            <label class="form-login__label" for="email">E-mail</label>
+            <input id="email" class="form-login__input" type="email" required>
+            <label class="form-login__label" for="password">Password</label>
+            <input id="password" class="form-login__input" type="password" required>
+            <button id="form-login__button" type="submit" class="form-login__button">Sign In</button>
+        </form>
+        <a href="#" class="login__password-forgot-link">Forgot Your Password?</a>
+        <span class="login__line-only"></span>
+        <span class="login__question-register">Don’t have an account?
+            <a id="registerLink" href="#" class="register__link">Register</a>
+        </span>
+    </div>
+</div>
+<div class="darken-area"></div>
+<script src="./index.js"></script>
 </body>
 </html>
