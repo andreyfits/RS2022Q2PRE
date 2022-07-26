@@ -1,8 +1,9 @@
 /*======================================== VARIABLES CSS ========================================*/
 :root {
     /*======================================== COLORS ========================================*/
-    --color-white: #fff;
+    --color-white: #FFFFFF;
     --color-blue: #0D606F;
+    --color-light-blue: #1877F2;
     --color-orange: #F2785C;
 
     /*======================================== FONT AND TYPOGRAPHY ========================================*/
@@ -13,6 +14,12 @@
     --font-btn: normal 500 24px/31.75px 'Red Hat Text', sans-serif;
     --font-nav-footer: normal 500 16px/21.17px 'Red Hat Text', sans-serif;
 
+    --font-login-title: normal 700 32px/38.4px 'Aleo', sans-serif;
+    --font-login-text: normal 400 20px/26.46px 'Red Hat Text', sans-serif;
+    --font-login-line: normal 700 20px/24px 'Aleo', sans-serif;
+    --font-login-label: normal 400 16px/19.2px 'Aleo', sans-serif;
+    --font-login-pass-forgot: normal 700 15px/18px 'Aleo', sans-serif;
+
     --font-h1: normal 700 80px/96px 'Aleo', sans-serif;
     --font-preview-text: italic 700 20px/24px 'Aleo', sans-serif;
     --font-read-more: normal 700 20px/24px 'Aleo', sans-serif;
@@ -20,7 +27,7 @@
     --font-step-stories-text: normal 400 20px/24px 'Aleo', sans-serif;
     --font-placeholder: italic 400 24px/28.8px 'Aleo', sans-serif;
 
-    --slower: .5s;
+    --faster: .5s;
     --normal: 1s;
 }
 
@@ -84,7 +91,7 @@ body {
     gap: 6px;
     color: var(--color-white);
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .logo img {
@@ -108,7 +115,7 @@ body {
     font: var(--font-nav-footer);
     color: var(--color-white);
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .nav-link:hover {
@@ -116,10 +123,6 @@ body {
 }
 
 .mobile {
-    display: none;
-}
-
-.darken {
     display: none;
 }
 
@@ -144,7 +147,7 @@ body {
     box-shadow: 0 0 3px rgba(13, 96, 111, 0.08), 0 2px 3px rgba(13, 96, 111, 0.16);
     border-radius: 10px;
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .header-btn {
@@ -301,24 +304,27 @@ button:hover {
 }
 
 .slider-inner {
+    width: 2520px;
+    position: relative;
+    left: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 60px;
+    transition: all var(--faster) ease 0s;
 }
 
 .slide {
-    position: relative;
+    width: 800px;
+    height: 800px;
 }
 
 .slide img {
-    width: 800px;
-    height: 800px;
     border-radius: 16px;
 }
 
 .slide-text {
-    position: absolute;
-    bottom: 40px;
+    position: relative;
+    bottom: 82px;
     left: 15px;
     font: var(--font-destination);
     text-transform: uppercase;
@@ -339,7 +345,7 @@ button:hover {
     background: rgba(242, 120, 92, 0.5);
     border-radius: 50%;
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .dot:hover {
@@ -389,7 +395,7 @@ button:hover {
     color: var(--color-blue);
     text-decoration-line: underline;
     cursor: pointer;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .stories-link:hover {
@@ -439,7 +445,7 @@ button:hover {
 }
 
 .footer-links a {
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .rss-link {
@@ -467,11 +473,209 @@ button:hover {
 .social-icon {
     width: 33.65px;
     height: 33.65px;
-    transition: var(--slower);
+    transition: var(--faster);
 }
 
 .social-icon:hover {
     transform: scale(1.25);
+}
+
+
+/*======================================== MODAL LOGIN ========================================*/
+.login {
+    width: 650px;
+    height: 660px;
+    position: fixed;
+    margin: 0 auto;
+    padding: 25px 45px 23px 45px;
+    left: 0;
+    right: 0;
+    top: -900px;
+    z-index: 500;
+    transition: var(--normal);
+    background: var(--color-white) linear-gradient(177.09deg, var(--color-white) 6.15%, var(--color-blue) 202.69%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+.login--register {
+    height: 436px;
+}
+
+.login.login--active {
+    transition: var(--faster);
+    top: calc(50vh - (660px / 2));
+}
+
+.login__wrapper {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+}
+
+.login__wrapper--register {
+    visibility: visible;
+    opacity: 1;
+    transition: var(--faster);
+}
+
+.login__title {
+    font: var(--font-login-title);
+    color: var(--color-blue);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login__list {
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 56px;
+    box-shadow: 0 0 3px rgba(13, 96, 111, 0.08), 0 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+}
+
+.item-login:first-child {
+    background-color: var(--color-light-blue);
+}
+
+.item-login:last-child {
+    background-color: var(--color-white);
+}
+
+.item-login__ico {
+    width: 24px;
+    height: 24px;
+}
+
+.item-login__text {
+    font: var(--font-login-text);
+    color: var(--color-white);
+}
+
+.item-login__text_blue {
+    color: var(--color-blue);
+}
+
+.login__line {
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+    font: var(--font-login-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    color: rgba(13, 96, 111, 0.5);
+}
+
+.login__line::before,
+.login__line::after {
+    content: '';
+    position: relative;
+    width: 261px;
+    height: 1px;
+    margin-bottom: 1px;
+    background-color: rgba(13, 96, 111, 0.5);
+}
+
+.login__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.login__form--register {
+    margin-bottom: 26px;
+}
+
+.form-login__label {
+    font: var(--font-login-label);
+    color: var(--color-blue);
+}
+
+.form-login__input {
+    margin-bottom: 14px;
+    width: 100%;
+    height: 54px;
+    background: var(--color-white);
+    box-shadow: inset 0 0 3px rgba(13, 96, 111, 0.08), inset 0 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    outline-color: var(--color-orange);
+    padding: 0 10px;
+}
+
+.form-login__button {
+    margin-top: 7px;
+    cursor: pointer;
+    height: 54px;
+    font: var(--font-login-text);
+    background: var(--color-blue);
+    color: var(--color-white);
+    box-shadow: 0 0 3px rgba(13, 96, 111, 0.08), 0 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+}
+
+.login__password-forgot-link {
+    margin-bottom: 25px;
+    font: var(--font-login-pass-forgot);
+    text-decoration-line: underline;
+    color: var(--color-blue);
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.login__password-forgot-link:hover,
+.register__link:hover {
+    text-decoration-color: var(--color-orange);
+    transition: all var(--faster) ease 0s;
+}
+
+.login__line-only {
+    margin-bottom: 21px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(13, 96, 111, 0.5);
+}
+
+.login__question-register {
+    font: var(--font-login-pass-forgot);
+    color: rgba(13, 96, 111, 0.5);
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.login__question-register--register {
+    margin-left: 7px;
+}
+
+.register__link, .login__link {
+    margin-left: 4px;
+    font: var(--font-login-pass-forgot);
+    text-decoration-line: underline;
+    color: var(--color-blue);
+    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.16);
+    cursor: pointer;
+}
+
+.darken {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: var(--faster);
 }
 
 /*======================================== MEDIA QUERIES ======================================== */
@@ -545,12 +749,16 @@ button:hover {
     }
 
     .slider-inner {
-        gap: 30px;
+        width: 1260px;
+    }
+
+    .slide {
+        width: 400px;
+        height: 400px;
     }
 
     .slide img {
-        width: 400px;
-        height: 400px;
+        width: 100%;
         object-fit: cover;
     }
 
@@ -583,6 +791,111 @@ button:hover {
 
     .footer-description {
         font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .login {
+        width: 340px;
+        height: 400px;
+        padding: 15px 25px;
+        top: -600px;
+    }
+
+    .login--register {
+        height: 280px;
+    }
+
+    .login.login--active {
+        top: calc(50vh - (400px / 2));
+    }
+
+    .login__title {
+        margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .login__list {
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+
+    .item-login {
+        height: 36px;
+    }
+
+    .item-login__ico {
+        width: 14px;
+        height: 14px;
+    }
+
+    .item-login__text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .login__line {
+        margin-bottom: 5px;
+        font-size: 14px;
+        line-height: 12px;
+    }
+
+    .login__form {
+        margin-bottom: 5px;
+    }
+
+    .login__form--register {
+        margin-bottom: 15px;
+    }
+
+    .form-login__label {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .form-login__input {
+        margin-bottom: 5px;
+        height: 36px;
+    }
+
+    .form-login__button {
+        margin-top: 5px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .login__password-forgot-link {
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .login__line-only {
+        margin-bottom: 10px;
+    }
+
+    .login__question-register {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .register__link {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .login {
+        width: 270px;
+        height: 400px;
+        padding: 10px 20px;
+    }
+
+    .login--register {
+        height: 270px;
     }
 }
 
@@ -652,6 +965,10 @@ button:hover {
     .step-block img {
         width: 50%;
         height: 50%;
+    }
+
+    .slider-inner {
+        gap: 30px;
     }
 
     .step-text {
@@ -733,7 +1050,7 @@ button:hover {
         right: 0;
         bottom: 0;
         z-index: -1;
-        background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
+        background: linear-gradient(180deg, var(--color-blue) 0%, rgba(13, 96, 111, 0) 25.1%);
     }
 
     .preview-mobile {
@@ -755,7 +1072,7 @@ button:hover {
         height: 17px;
         flex-direction: column;
         justify-content: space-between;
-        transition-duration: var(--slower);
+        transition-duration: var(--faster);
     }
 
     .line {
@@ -767,7 +1084,7 @@ button:hover {
     }
 
     .toggle:hover {
-        transition-duration: var(--slower);
+        transition-duration: var(--faster);
         opacity: .75;
         cursor: pointer;
     }
@@ -818,7 +1135,7 @@ button:hover {
         position: fixed;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, .3);
+        background-color: rgba(0, 0, 0, .5);
         transition: var(--normal);
     }
 
@@ -905,17 +1222,14 @@ button:hover {
         margin: 21px 0 10px 0;
     }
 
-    .slider-wrapper {
-        align-items: flex-start;
-        padding-left: 15px;
-    }
-
     .slider-inner {
-        gap: 15px;
+        width: 300vw;
+        justify-content: space-evenly;
+        gap: 0;
     }
 
     .slide {
-        width: 360px;
+        width: calc(100vw - 30px);
         height: 210px;
     }
 
@@ -947,17 +1261,13 @@ button:hover {
 
     .right-arrow {
         cursor: pointer;
-        transition: var(--slower);
+        transition: var(--faster);
     }
 
     .left-arrow {
         cursor: pointer;
-        transition: var(--slower);
+        transition: var(--faster);
         transform: rotate(180deg);
-    }
-
-    .inactive-arrow {
-        filter: opacity(0.5);
     }
 
     .slider-counter {
