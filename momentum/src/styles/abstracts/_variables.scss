@@ -9,19 +9,19 @@ $font-color-orange: #ffc600;
 
 // background colors
 $background-color-white: #ffffff;
-$background-color-dark: rgba(0, 0, 0, 0.5);
-$background-color-gray: rgb(182, 182, 182);
+$background-color-dark: rgb(0 0 0 / 50%);
+$background-color-gray: rgb(182 182 182);
 $background-color-orange: #ffc600;
 
-//border-color
+// border-color
 $border-color-white: #ffffff;
 $border-color-orange: #ffc600;
-$border-color-gray: rgb(182, 182, 182);
+$border-color-gray: rgb(182 182 182);
 
-//box-shadow
+// box-shadow
 $box-shadow-orange: #ffc600;
-$box-shadow-dark: rgba(0, 0, 0, 0.5);
-$box-shadow-gray: rgb(128, 128, 128);
+$box-shadow-dark: rgb(0 0 0 / 50%);
+$box-shadow-gray: rgb(128 128 128);
 
 // transition
 $transition-fast: 0.45s linear;
