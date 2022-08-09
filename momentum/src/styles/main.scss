@@ -1,4 +1,24 @@
 @import "~normalize.css";
 
+// Configuration and helpers
 @import
-  'base/fonts';
+  "abstracts/variables",
+  "abstracts/mixins";
+
+// Base stuff
+@import
+  "base/fonts";
+
+// Layout-related sections
+@import
+  "layout/header",
+  "layout/main",
+  "layout/footer";
+
+// Components
+@import
+  "components/buttons",
+  "components/hint",
+  "components/player-range",
+  "components/preload",
+  "components/settings";
