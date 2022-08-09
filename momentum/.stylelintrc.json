@@ -11,6 +11,7 @@
     "scss/at-import-partial-extension": "never",
     "block-closing-brace-newline-before": "always",
     "block-closing-brace-newline-after": "always",
+    "number-max-precision": 8,
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
     "at-rule-semicolon-newline-after": "always",
