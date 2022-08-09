@@ -11,6 +11,29 @@
     <link rel="shortcut icon" href="./assets/favicon.ico">
 </head>
 <body>
-
+<header class="header">
+    <div class="container">
+        <div class="header__content">
+            <div class="header__player">
+                <div class="header__player-controls">
+                    <button class="play-previous player-icon"></button>
+                    <button class="play player-icon"></button>
+                    <button class="play-next player-icon"></button>
+                </div>
+            </div>
+            <div class="header__weather">
+                <input type="text" class="city" name="city" placeholder="[Enter the city]"/>
+                <i class="header__weather-icon owf"></i>
+                <div class="header__weather-error"></div>
+                <div class="header__weather-description">
+                    <span class="temperature"></span>
+                    <span class="description"></span>
+                </div>
+                <div class="wind"></div>
+                <div class="humidity"></div>
+            </div>
+        </div>
+    </div>
+</header>
 </body>
 </html>

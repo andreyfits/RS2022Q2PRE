@@ -1,0 +1,89 @@
+.header {
+    &__content {
+
+        @include flex(row, space-between, flex-start);
+
+        width: 100%;
+        height: 30vh;
+        min-height: 220px;
+        padding: 20px;
+
+        @include tablets() {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+        }
+    }
+
+    &__player {
+        transition: $transition-long;
+
+        &-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 120px;
+        }
+    }
+
+    &__weather {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        row-gap: 5px;
+        width: 220px;
+        min-height: 180px;
+        text-align: left;
+        background: $background-color-dark;
+        box-shadow: 0 0 10px 5px $background-color-dark;
+        font: 16px $font-main;
+        transition: $transition-long;
+
+        &-error {
+            margin-top: -10px;
+        }
+    }
+
+    &__description-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 12px;
+    }
+}
+
+.play-item {
+    list-style: none;
+    position: relative;
+    padding: 5px 5px 5px 20px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: $transition-fast;
+}
+
+.input {
+    &__city {
+        width: 170px;
+        height: 34px;
+        padding: 5px;
+        font-size: 20px;
+        line-height: 24px;
+        color: $font-color-white;
+        border: 0;
+        outline: 0;
+        border-bottom: 1px solid $border-color-white;
+        background-color: transparent;
+
+        &::placeholder {
+            font-size: 20px;
+            color: $font-color-white;
+            opacity: 0.55;
+        }
+
+        &.play-item:hover {
+            opacity: 1;
+        }
+    }
+}
