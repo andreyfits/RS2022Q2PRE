@@ -1,0 +1,94 @@
+@mixin media-custom($width) {
+
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin largeDesktops {
+
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablets {
+
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mediumDesktops {
+
+  @media screen and (max-width: 920px) {
+    @content;
+  }
+}
+
+@mixin smallDesktops {
+
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin portraitTablets {
+
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin landscapeMobile {
+
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin widgets {
+
+  @media screen and (max-width: 550px) {
+    @content;
+  }
+}
+
+@mixin mMobile {
+
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin sMobile {
+
+  @media screen and (max-width: 420px) {
+    @content;
+  }
+}
+
+@mixin xsMobile {
+
+  @media screen and (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin justFlex() {
+  display: flex;
+}
