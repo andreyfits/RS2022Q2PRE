@@ -27,19 +27,20 @@
     }
 
     &__weather {
-        padding: 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         row-gap: 5px;
-        width: 200px;
+        width: 180px;
         min-height: 180px;
         text-align: left;
-        background: $background-color-dark;
-        box-shadow: 0 0 10px 5px $background-color-dark;
         font: 16px $font-main;
         transition: $transition-long;
+
+        &-icon {
+            font-size: 44px;
+        }
 
         &-error {
             margin-top: -10px;
