@@ -1,0 +1,45 @@
+.footer {
+    &__content {
+        position: relative;
+
+        @include flex(column, flex-end, center);
+
+        width: 100%;
+        height: 30vh;
+        min-height: 160px;
+        padding: 20px;
+    }
+
+    &__quote {
+        min-height: 32px;
+
+        &-container {
+            font-family: $font-main;
+            transition: $transition-long;
+        }
+
+        &-author {
+            min-height: 20px;
+        }
+    }
+
+    &__bottom {
+        width: 100%;
+        padding: 20px 0 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &-copyright,
+        &-school,
+        &-author {
+            margin: 0;
+            font: 400 18px $font-main;
+            line-height: 22px;
+            letter-spacing: 2px;
+            color: $font-color-white;
+            text-decoration: none;
+        }
+    }
+}
