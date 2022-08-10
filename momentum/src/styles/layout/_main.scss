@@ -1,0 +1,61 @@
+.main {
+    &__content {
+        width: 100%;
+        height: 40vh;
+        min-height: 260px;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__time {
+        min-height: 124px;
+        margin-bottom: 10px;
+        font: 100px $font-additional;
+        letter-spacing: -4px;
+        transition: $transition-long;
+    }
+
+    &__date {
+        min-height: 28px;
+        font: 24px $font-additional;
+        margin-bottom: 20px;
+        transition: $transition-long;
+    }
+
+    &__greeting-container {
+        min-height: 48px;
+        width: calc(100vw - 40px);
+        font-size: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        align-items: center;
+    }
+
+    &__greeting {
+        flex: 1;
+        padding: 10px;
+        font-family: $font-main;
+        text-align: right;
+    }
+
+    &__name {
+        max-width: 50%;
+        padding: 10px;
+        font: 40px $font-main;
+        text-align: left;
+        flex: 1;
+        color: $font-color-white;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+
+        &::placeholder {
+            opacity: 0.7;
+        }
+    }
+}
