@@ -41,5 +41,13 @@
             color: $font-color-white;
             text-decoration: none;
         }
+
+        &-author {
+            transition: $transition-fast;
+
+            &:hover {
+                color: $font-color-green;
+            }
+        }
     }
 }
