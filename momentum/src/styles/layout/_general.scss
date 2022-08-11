@@ -65,6 +65,12 @@ body {
     }
 }
 
+.header {
+    &__weather-icon {
+        font-size: 44px;
+    }
+}
+
 @each $name in play, play-prev, play-next {
     .#{$name} {
         background: url("../assets/svg/#{$name}.svg") 0/cover;
