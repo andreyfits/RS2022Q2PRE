@@ -18,17 +18,17 @@ export default (lang = 'en-EN') => {
     const hours = new Date().getHours();
     const count = Math.floor(hours / 6);
 
-    let dayOfTime;
+    let timeOfDay;
 
     if (lang === 'ru-RU') {
-        dayOfTime = GREETINGS_RU[count];
-        greeting.textContent = `${dayOfTime},`;
+        timeOfDay = GREETINGS_RU[count];
+        greeting.textContent = `${timeOfDay},`;
         name.placeholder = '[Введите имя]';
     } else {
-        dayOfTime = GREETINGS_EN[count];
-        greeting.textContent = `Good ${dayOfTime},`;
+        timeOfDay = GREETINGS_EN[count];
+        greeting.textContent = `Good ${timeOfDay},`;
         name.placeholder = '[Enter name]';
     }
 
-    return dayOfTime;
+    return timeOfDay;
 };
