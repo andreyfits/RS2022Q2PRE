@@ -8,7 +8,10 @@ import setValuesToLocalStorage from './localStorage';
 
 import slider from './slider';
 
+import quotes from './quotes';
+
 greeting();
 clock();
 setValuesToLocalStorage();
 slider();
+quotes();
