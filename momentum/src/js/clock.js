@@ -53,5 +53,5 @@ export default () => {
         dateText.textContent = correctDate;
     }
 
-    return showDate();
+    return showDate;
 };

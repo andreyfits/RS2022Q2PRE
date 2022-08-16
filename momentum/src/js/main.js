@@ -12,7 +12,9 @@ import quotes from './quotes';
 
 import audioplayer from './audioplayer';
 
-import translate from './traslate';
+import translate from './translate';
+
+import settings from './settings';
 
 greeting();
 clock();
@@ -21,3 +23,4 @@ slider();
 quotes();
 audioplayer();
 translate();
+settings();

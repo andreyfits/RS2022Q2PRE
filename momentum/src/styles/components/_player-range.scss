@@ -20,7 +20,7 @@
                 border-radius: 50%;
                 background-color: rgb(215 215 215);
                 border-color: 1px solid $border-color-gray;
-                transition: $transition-fast linear;
+                transition: $transition-fast;
 
                 &:active {
                     transform: scale(1.1);

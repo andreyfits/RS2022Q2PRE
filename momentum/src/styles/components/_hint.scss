@@ -15,14 +15,14 @@
             background-color: rgb(0 0 0 / 70%);
             border: 2px solid transparent;
             border-radius: 30px;
-            animation: appear reverse 0.5s linear;
-            transition: 0.25s linear;
+            animation: show reverse $transition-long;
+            transition: $transition-fast;
         }
 
         &:hover > &-text {
-            animation: appear 0.5s linear;
+            animation: appear $transition-fast;
             opacity: 1;
-            z-index: 999;
+            z-index: 100;
         }
     }
 }
