@@ -6,7 +6,7 @@ import photosource from './photosource';
 
 export default () => {
     const timeOfDay = greeting('en-EN');
-    const radio = document.querySelectorAll('.src');
+    const radio = document.querySelectorAll('.source');
 
     function getRandomNum() {
         let num = Math.floor(1 + Math.random() * 20);
