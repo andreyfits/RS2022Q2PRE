@@ -1,9 +1,12 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-nested-ternary */
+/* eslint-disable no-undef */
 import greeting from './greeting';
 
+import photosource from './photosource';
+
 export default () => {
-    const timeOfDay = greeting();
+    const timeOfDay = greeting('en-EN');
+    const radio = document.querySelectorAll('.src');
 
     function getRandomNum() {
         let num = Math.floor(1 + Math.random() * 20);
@@ -11,31 +14,32 @@ export default () => {
         return num < 10 ? `0${num}` : num;
     }
 
-    function setBg(isClicked, opt) {
-        const img = new Image();
-        const imgUrl = 'https://raw.githubusercontent.com/andreyfits/stage1-tasks/assets/images/';
+    Array.from(radio).forEach((r) => [
+        r.addEventListener('click', () => {
+            setBackground();
+            setActivePhotosource();
+        })
+    ]);
 
-        if (isClicked) {
-            const url = document.body.style.backgroundImage;
-            let imgNum = url.match(/[0-9]{2}/g);
+    function setBackground(isClicked, opt) {
+        const src = setActivePhotosource();
 
-            img.src = `${imgUrl}${timeOfDay}/${correctNumber(imgNum, opt)}.jpg`;
+        if (src.value === 'github') {
+            setImageFromGithub(isClicked, opt);
+        } else if (src.value === 'flickr') {
+            photosource('flickr');
         } else {
-            img.src = `${imgUrl}${timeOfDay}/${getRandomNum()}.jpg`;
+            photosource('unsplash');
         }
-
-        img.addEventListener('load', () => {
-            document.body.style.backgroundImage = `url(${img.src})`;
-        });
     }
 
-    setBg();
+    setBackground();
 
     (function getSlideNext() {
         const slideNext = document.querySelector('.slide-next');
 
         slideNext.addEventListener('click', () => {
-            setBg(true, 'inc');
+            setBackground(true, 'inc');
         });
     })();
 
@@ -43,9 +47,15 @@ export default () => {
         const slidePrev = document.querySelector('.slide-prev');
 
         slidePrev.addEventListener('click', () => {
-            setBg(true);
+            setBackground(true);
         });
     })();
+
+    function setActivePhotosource() {
+        const activeSrc = Array.from(radio).find((r) => r.checked);
+        localStorage.setItem('src', activeSrc.value);
+        return activeSrc;
+    }
 
     function correctNumber(i, opt = 'dec') {
         if (opt === 'inc') {
@@ -53,5 +63,23 @@ export default () => {
         }
 
         return i < 2 ? '20' : i <= 10 ? `0${--i}` : --i;
+    }
+
+    function setImageFromGithub(isClicked, opt) {
+        const img = new Image();
+        const imgUrl = 'https://raw.githubusercontent.com/andreyfits/stage1-tasks/assets/images/';
+
+        if (isClicked) {
+            const url = document.body.style.backgroundImage;
+            let imageNum = url.match(/[0-9]{2}/g);
+
+            img.src = `${imgUrl}${timeOfDay}/${correctNumber(imageNum[1], opt)}.jpg`;
+        } else {
+            img.src = `${imgUrl}${timeOfDay}/${getRandomNum()}.jpg`;
+        }
+
+        img.onload = () => {
+            document.body.style.background = `url(${img.src}) 0/cover`;
+        };
     }
 };
