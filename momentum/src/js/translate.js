@@ -22,8 +22,8 @@ export default () => {
     function setLang(lang) {
         const settings = document.querySelector('.settings__heading');
         const fields = document.querySelectorAll('.settings__text');
-        const enSettings = ['Language', ' Audioplayer', 'Weather', 'Time', 'Date', 'Greeting', 'Quotes', 'Oscilloscope', 'Photosource'];
-        const ruSettings = ['Язык', ' Аудиоплеер', 'Погода', 'Время', 'Дата', 'Приветствие', 'Цитаты', 'Осциллограф', 'Фоторесурс'];
+        const enSettings = ['Language', ' Audioplayer', 'Weather', 'Time', 'Date', 'Greeting', 'Quotes', 'Photosource'];
+        const ruSettings = ['Язык', ' Аудиоплеер', 'Погода', 'Время', 'Дата', 'Приветствие', 'Цитаты', 'Фоторесурс'];
         let titles;
 
         if (lang === 'en-EN') {
