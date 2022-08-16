@@ -24,6 +24,77 @@
             justify-content: space-between;
             width: 120px;
         }
+
+        &_progress-bar {
+            position: relative;
+            height: 10px;
+            min-width: 160px;
+            background-color: $background-color-white;
+            cursor: pointer;
+        }
+
+        &_progress {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $background-color-green;
+            z-index: 100;
+        }
+
+        &-item {
+            font-family: $font-main;
+            list-style-type: none;
+            text-align: left;
+            transition: $transition-fast;
+            cursor: pointer;
+
+            span {
+                position: relative;
+                left: 40px;
+                z-index: -100;
+            }
+
+            &.pause::before {
+                mask: url("../assets/svg/pause.svg") 0/cover;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                mask: url("../assets/svg/play.svg") 0/cover;
+                width: 18px;
+                height: 18px;
+                background-color: $background-color-white;
+                opacity: 0.8;
+                transition: $transition-fast;
+            }
+
+            &:hover {
+                color: $font-color-green;
+
+                &::before {
+                    background-color: $background-color-green;
+                }
+            }
+
+            &_active {
+                color: $font-color-green;
+
+                &::before {
+                    background-color: $background-color-green;
+                }
+            }
+        }
+
+        &-playlist {
+            margin-top: 10px;
+            position: absolute;
+            top: 110px;
+            display: grid;
+            row-gap: 10px;
+            z-index: 100;
+        }
     }
 
     &__weather {
@@ -56,15 +127,6 @@
     }
 }
 
-.play-item {
-    list-style: none;
-    position: relative;
-    padding: 5px 5px 5px 20px;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: $transition-fast;
-}
-
 .city {
     width: 170px;
     height: 34px;
@@ -81,9 +143,5 @@
         font-size: 20px;
         color: $font-color-white;
         opacity: 0.55;
-    }
-
-    &.play-item:hover {
-        opacity: 1;
     }
 }

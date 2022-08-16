@@ -43,7 +43,9 @@ body {
 
 .player-icon,
 .slider-icon,
-.change-quote-icon {
+.change-quote-icon,
+.volume-icon,
+.mute-icon {
     width: 32px;
     height: 32px;
     background-size: 32px 32px;
@@ -71,7 +73,7 @@ body {
     }
 }
 
-@each $name in play, play-prev, play-next {
+@each $name in play, play-prev, play-next, volume, mute {
     .#{$name} {
         background: url("../assets/svg/#{$name}.svg") 0/cover;
     }

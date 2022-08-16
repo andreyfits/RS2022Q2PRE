@@ -1,0 +1,79 @@
+.header {
+    &__player {
+
+        @include flex(row, flex-start);
+
+        width: 100%;
+        display: grid;
+        gap: 10px 20px;
+
+        &-range {
+            height: 3px;
+            appearance: none;
+            background: rgb(115 115 115);
+            cursor: pointer;
+
+            &::-webkit-slider-thumb {
+                width: 15px;
+                height: 15px;
+                appearance: none;
+                border-radius: 50%;
+                background-color: rgb(215 215 215);
+                border-color: 1px solid $border-color-gray;
+                transition: $transition-fast linear;
+
+                &:active {
+                    transform: scale(1.1);
+                }
+            }
+
+            &:hover::-webkit-slider-thumb {
+                transform: scale(1.1);
+            }
+
+            &_duration {
+                max-width: 200px;
+            }
+        }
+
+        &_progress-bar {
+            position: relative;
+            height: 10px;
+            min-width: 160px;
+            background-color: $background-color-white;
+            cursor: pointer;
+        }
+
+        &_progress {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $background-color-green;
+            z-index: 1;
+        }
+
+        &_volume-bar {
+            width: 100px;
+            height: 10px;
+            background: $background-color-white;
+            transition: $transition-fast;
+        }
+
+        &_volume {
+            background: $background-color-green;
+            height: 100%;
+            width: 80%;
+        }
+
+        &-song,
+        &-time,
+        &-duration {
+            font-family: $font-main;
+        }
+
+        &-song {
+            grid-area: 1 / 1 / 2 / span 6;
+        }
+    }
+}
