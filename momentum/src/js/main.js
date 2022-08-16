@@ -12,9 +12,12 @@ import quotes from './quotes';
 
 import audioplayer from './audioplayer';
 
+import translate from './traslate';
+
 greeting();
 clock();
 setValuesToLocalStorage();
 slider();
 quotes();
 audioplayer();
+translate();
