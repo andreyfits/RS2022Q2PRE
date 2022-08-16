@@ -57,7 +57,7 @@
             <p class="main__date"></p>
             <div class="main__greeting-container">
                 <span class="main__greeting"></span>
-                <input type="text" class="main__name" value="Andrei" placeholder="[Enter name]" />
+                <input type="text" class="main__name" value="Andrei" placeholder="[Enter name]"/>
             </div>
         </div>
     </div>
@@ -65,6 +65,101 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__content">
+            <div class="settings__container hidden">
+                <h3 class="settings__heading text-settings">Settings / Visibility</h3>
+                <ul class="settings__list">
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Language</span>
+                        <div class="radio__container">
+                            <label for="ru">
+                                <span class="text-settings">RU</span>
+                                <input id="ru" class="radio__button lang" type="radio" name="lang"
+                                       value="ru-RU">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="en">
+                                <span class="text-settings">EN</span>
+                                <input id="en" class="radio__button lang" type="radio" name="lang"
+                                       value="en-EN" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Audioplayer</span>
+                        <div class="settings__slider-track" data-count="0" data-enabled="false">
+                            <div class="settings__slider-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Weather</span>
+                        <div class="settings__slider-track" data-count="1" data-enabled="false">
+                            <div class="settings__slider-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Time</span>
+                        <div class="settings__slider-track" data-count="2" data-enabled="false">
+                            <div class="settings__slider-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Date</span>
+                        <div class="settings__slider-track" data-count="3" data-enabled="false">
+                            <div class="settings__slider-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Greeting</span>
+                        <div class="settings__slider-track" data-count="4" data-enabled="false">
+                            <div class="settings__slider-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Quotes</span>
+                        <div class="settings__slider-track" data-count="5" data-enabled="false">
+                            <div class="settings__slider-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <span class="settings__text text-settings">Visualizer</span>
+                        <div class="settings__slider-track" data-count="6" data-enabled="false">
+                            <div class="settings__slider-thumb"></div>
+                        </div>
+                    </li>
+                    <li class="settings__item">
+                        <div class="settings__text text-settings photosource__container">Photosource
+                        </div>
+                        <div class="radio__container">
+                                <span class="settings__hint"><span class="hint">?</span>
+                                    <span class="settings__hint-text text_size_m">
+                                        1 - Github, 2 - Flickr, 3 - Unsplash
+                                    </span>
+                                </span>
+                            <span class="settings__text text-settings"></span>
+                            <label for="gh">
+                                <span class="text-settings">1</span>
+                                <input id="gh" class="radio__button source" type="radio" name="src"
+                                       value="github" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="fli">
+                                <span class="text-settings">2</span>
+                                <input id="fli" class="radio__button source" type="radio" name="src"
+                                       value="flickr">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="uns">
+                                <span class="text-settings">3</span>
+                                <input id="uns" class="radio__button source" type="radio" name="src"
+                                       value="unsplash">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="settings" type="button"></button>
             <div class="footer__quote-container">
                 <button class="change-quote-icon"></button>
                 <div class="footer__quote"></div>

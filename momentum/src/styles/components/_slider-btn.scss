@@ -1,0 +1,73 @@
+@keyframes smoot-move {
+    10% {
+        width: 15px;
+        height: 15px;
+    }
+
+    25% {
+        width: 10px;
+        height: 10px;
+        opacity: 0.5;
+    }
+
+    35% {
+        width: 10px;
+        height: 5px;
+    }
+
+    55% {
+        width: 10px;
+        height: 2px;
+    }
+
+    80% {
+        width: 10px;
+        height: 5px;
+    }
+
+    100% {
+        width: 18px;
+        height: 18px;
+        opacity: 1;
+    }
+}
+
+.settings {
+    &__slider {
+        &-track {
+            position: relative;
+            z-index: 100;
+
+            @include flex;
+
+            margin-left: 150px;
+            width: 50px;
+            height: 15px;
+            background: $background-color-dark;
+            border: 1px solid $border-color-green;
+            border-radius: 30px;
+            opacity: 0.8;
+            box-shadow: 0 0 8px -4px $box-shadow-gray;
+            transition: $transition-long;
+            cursor: pointer;
+
+            &_state_active {
+                box-shadow: 0 0 8px 1px $background-color-green;
+                opacity: 1;
+                background-color: $background-color-green;
+            }
+        }
+
+        &-thumb {
+            position: absolute;
+            left: -1px;
+            width: 15px;
+            height: 15px;
+            background-color: $background-color-white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: $transition-long;
+            z-index: -100;
+        }
+    }
+}

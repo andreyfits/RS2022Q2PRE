@@ -106,3 +106,11 @@ body {
 .show {
     animation: show $transition-long linear;
 }
+
+.hidden {
+    opacity: 0;
+}
+
+.text-settings {
+    font-family: $font-main;
+}
