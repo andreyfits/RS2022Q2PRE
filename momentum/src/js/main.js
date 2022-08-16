@@ -10,8 +10,11 @@ import slider from './slider';
 
 import quotes from './quotes';
 
+import audioplayer from './audioplayer';
+
 greeting();
 clock();
 setValuesToLocalStorage();
 slider();
 quotes();
+audioplayer();
