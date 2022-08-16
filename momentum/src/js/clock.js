@@ -34,7 +34,7 @@ export default () => {
 
         const dateText = document.querySelector('.main__date');
         const options = {
-            year: '2-digit',
+            day: '2-digit',
             month: 'long',
             weekday: 'long'
         };
@@ -47,7 +47,7 @@ export default () => {
         if (lang === 'ru-RU') {
             correctDate = `${splitDate[0][0].toUpperCase() + splitDate[0].slice(1)} ${splitDate[1]} ${splitDate[2]}`;
         } else {
-            correctDate = `${splitDate[2]}, ${splitDate[0]} ${splitDate[1]}`;
+            correctDate = `${splitDate[0]} ${splitDate[2]} ${splitDate[1]}`;
         }
 
         dateText.textContent = correctDate;
