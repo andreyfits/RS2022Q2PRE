@@ -2,6 +2,7 @@
 import playlist from './playlist';
 
 export default () => {
+    const audio = document.querySelector('.header__audioplayer');
     const playButton = document.querySelector('.play.player-icon');
     const prevButton = document.querySelector('.play-prev.player-icon');
     const nextButton = document.querySelector('.play-next.player-icon');
@@ -13,70 +14,136 @@ export default () => {
     const track = document.querySelector('.header__player-song');
     const currentTime = document.querySelector('.header__player-time');
     const duration = document.querySelector('.header__player-duration');
+    const song = document.querySelectorAll('.header__player-item');
     const mute = document.querySelector('.header__player-mute');
-
-    let isPlay = false;
     let playNum = 0;
-    const audio = new Audio();
-    audio.src = playlist[playNum].src;
-    track.textContent = playlist[playNum].title;
 
     function playAudio() {
-        if (!isPlay) {
+        const state = audio.dataset.state;
+        let findElement = Array.from(songs.children).find((element) => element.classList.contains('header__player-item_active'));
+
+        if (state === 'pause') {
+            audio.dataset.state = 'play';
             audio.play();
-            isPlay = true;
             playButton.classList.add('pause');
-            songs.childNodes[playNum].classList.add('header__player-item_active', 'pause');
-            track.textContent = playlist[playNum].title;
+            findElement.classList.add('pause');
         } else {
+            audio.dataset.state = 'pause';
             audio.pause();
-            isPlay = false;
             playButton.classList.remove('pause');
-            songs.childNodes[playNum].classList.remove('pause');
+            findElement.classList.remove('pause');
         }
     }
 
-    function playNext() {
-        songs.childNodes[playNum].classList.remove('header__player-item_active', 'pause');
-        playNum++;
-        if (playNum > 5) {
-            playNum = 0;
+    function nextSongAfterEnding() {
+        if (audio.currentTime === audio.duration) {
+            getTrack('next');
+            getCurrentTime();
         }
-        isPlay = false;
-        audio.src = playlist[playNum].src;
-        playAudio();
     }
 
-    function playPrev() {
-        songs.childNodes[playNum].classList.remove('header__player-item_active', 'pause');
-        playNum--;
-        if (playNum < 0) {
-            playNum = 5;
+    function getTrack(btn) {
+        let path;
+
+        if (btn === 'prev') {
+            path = playlist[playNum === 0 ? playNum = playlist.length - 1 : --playNum].src;
+        } else {
+            path = playlist[playNum === playlist.length - 1 ? playNum = 0 : ++playNum].src;
         }
-        isPlay = false;
-        audio.src = playlist[playNum].src;
-        playAudio();
+
+        audio.src = path;
+        audio.dataset.count = playNum;
+        audio.play();
+        audio.dataset.state = 'play';
+        getDuration();
+        getTrackName();
+        setActiveTrack(playNum);
     }
 
-    playlist.forEach(el => {
-        const li = document.createElement('li');
-        const span = document.createElement('span');
-        li.classList.add('header__player-item');
-        span.textContent = el.title;
-        li.appendChild(span);
-        songs.appendChild(li);
+    function getCurrentTime() {
+        const seconds = Math.floor(audio.currentTime);
+        const minutes = Math.floor(seconds / 60);
+        const trueSeconds = seconds - minutes * 60;
+
+        currentTime.textContent = `0${minutes}:${trueSeconds < 10 ? '0' + trueSeconds : trueSeconds}`;
+    }
+
+    function getTrackName(c) {
+        track.textContent = playlist[c || playNum].title;
+    }
+
+    function getDuration(c = playNum) {
+        duration.textContent = playlist[c].duration;
+    }
+
+    (function generateTrackNames() {
+        song.forEach((song, i) => {
+            song.dataset.count = i;
+            song.firstElementChild.textContent = playlist[i].title;
+        });
+    })();
+
+    function chooseTheTrack() {
+        let songCounter;
+        songs.addEventListener('click', (event) => {
+            audio.dataset.state = 'play';
+            if (event.target.tagName === 'LI') {
+                songCounter = event.target.dataset.count;
+                audio.dataset.count = songCounter;
+                const src = playlist[songCounter].src;
+                duration.textContent = playlist[songCounter].duration;
+
+                if (event.target.classList.contains('header__player-item_active')) {
+                    if (event.target.classList.contains('pause')) {
+                        event.target.classList.remove('pause');
+                        [event.target, playButton].forEach((element) => {
+                            element.classList.remove('pause');
+                        });
+                        audio.pause();
+                    } else {
+                        event.target.classList.add('pause');
+                        [event.target, playButton].forEach((element) => {
+                            element.classList.add('pause');
+                        });
+                        audio.play();
+                    }
+                } else {
+                    audio.src = src;
+                    audio.play();
+                    getTrackName(songCounter);
+                    setActiveTrack(songCounter);
+                    getDuration(songCounter);
+                }
+            }
+        });
+    }
+
+    function setActiveTrack(counter) {
+        song.forEach((song, i) => {
+            if (i === +counter) {
+                song.classList.add('header__player-item_active', 'pause');
+                playButton.classList.add('pause');
+            } else {
+                song.classList.remove('header__player-item_active', 'pause');
+            }
+        });
+    }
+
+    chooseTheTrack();
+
+    playButton.addEventListener('click', playAudio);
+
+    prevButton.addEventListener('click', () => {
+        getTrack('prev');
     });
 
-    songs.addEventListener('click', (event) => {
-        if (event.target.classList.contains('header__player-item_active')) {
-            playAudio();
-        } else {
-            songs.childNodes[playNum].classList.remove('header__player-item_active');
-            playNum = Array.prototype.indexOf.call(event.target.parentElement.children, event.target);
-            isPlay = false;
-            audio.src = playlist[playNum].src;
-            playAudio();
-        }
+    nextButton.addEventListener('click', () => {
+        getTrack('next');
+    });
+
+    audio.addEventListener('click', () => {
+        getCurrentTime();
+        nextSongAfterEnding();
     });
 
     setInterval(() => {
@@ -85,9 +152,9 @@ export default () => {
         duration.textContent = getTimeCodeFromNum(audio.duration);
     }, 500);
 
-    progressBar.addEventListener('click', e => {
+    progressBar.addEventListener('click', event => {
         const timelineWidth = window.getComputedStyle(progressBar).width;
-        audio.currentTime = e.offsetX / parseInt(timelineWidth) * audio.duration;
+        audio.currentTime = event.offsetX / parseInt(timelineWidth) * audio.duration;
     }, false);
 
     function getTimeCodeFromNum(num) {
@@ -123,9 +190,4 @@ export default () => {
         audio.volume = newVolume;
         volume.style.width = newVolume * 100 + '%';
     });
-
-    playButton.addEventListener('click', playAudio);
-    audio.addEventListener('ended', playNext);
-    nextButton.addEventListener('click', playNext);
-    prevButton.addEventListener('click', playPrev);
 };

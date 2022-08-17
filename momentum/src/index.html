@@ -18,6 +18,9 @@
     <div class="container">
         <div class="header__content">
             <div class="header__player">
+                <audio preload="auto" class="header__audioplayer"
+                       src="./assets/sounds/Camila%20Cabello%20feat.%20Ed%20Sheeran%20-%20Bam%20Bam.mp3"
+                       data-state="pause" data-count="0"></audio>
                 <span class="header__player-song">Camila Cabello feat. Ed Sheeran - Bam Bam</span>
                 <div class="header__player-container">
                     <div class="header__player-controls">
@@ -35,8 +38,26 @@
                         <div class="header__player_volume"></div>
                     </div>
                 </div>
-
-                <ul class="header__player-playlist"></ul>
+                <ul class="header__player-playlist">
+                    <li class="header__player-item header__player-item_active">
+                        <span></span>
+                    </li>
+                    <li class="header__player-item">
+                        <span></span>
+                    </li>
+                    <li class="header__player-item">
+                        <span></span>
+                    </li>
+                    <li class="header__player-item">
+                        <span></span>
+                    </li>
+                    <li class="header__player-item">
+                        <span></span>
+                    </li>
+                    <li class="header__player-item">
+                        <span></span>
+                    </li>
+                </ul>
             </div>
             <div class="header__weather">
                 <input type="text" class="city" name="city" placeholder="[Enter the city]"/>
