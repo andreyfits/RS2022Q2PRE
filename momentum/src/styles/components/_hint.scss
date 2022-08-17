@@ -2,8 +2,8 @@
     &__hint {
         &-text {
             position: absolute;
-            bottom: 35px;
             right: 0;
+            bottom: 35px;
             left: 0;
             padding: 10px;
             z-index: -100;
@@ -12,15 +12,15 @@
             text-align: center;
             font-family: $font-main;
             color: $font-color-green;
-            background-color: rgb(0 0 0 / 70%);
+            background-color: rgb(0 0 0 / 75%);
             border: 2px solid transparent;
-            border-radius: 30px;
-            animation: show reverse $transition-long;
+            border-radius: 25px;
+            animation: show reverse $transition-fast;
             transition: $transition-fast;
         }
 
         &:hover > &-text {
-            animation: appear $transition-fast;
+            animation: show $transition-fast;
             opacity: 1;
             z-index: 100;
         }
