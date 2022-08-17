@@ -14,13 +14,14 @@ export default () => {
     const tracks = document.querySelectorAll('.settings__slider-track');
     const thumbs = document.querySelectorAll('.settings__slider-thumb');
 
-    const audioplayer = document.querySelector('.header__player');
+    const audio = document.querySelector('.header__player');
     const weather = document.querySelector('.header__weather');
     const time = document.querySelector('.main__time');
     const date = document.querySelector('.main__date');
     const greetingElement = document.querySelector('.main__greeting-container');
     const quoteContainer = document.querySelector('.footer__quote-container');
-    const elems = [audioplayer, weather, time, date, greetingElement, quoteContainer];
+    const visualizer = document.getElementById('visualizer');
+    const elements = [audio, weather, time, date, greetingElement, quoteContainer, visualizer];
 
     const radioLanguage = document.querySelectorAll('.lang');
     const sources = document.querySelectorAll('.source');
@@ -45,9 +46,9 @@ export default () => {
     Array.from(tracks).forEach((track, i) => {
         track.addEventListener('click', (event) => {
             if (event.target.classList.contains('settings__slider-thumb')) {
-                setActiveThumb(event.target.parentElement, false, elems[i]);
+                setActiveThumb(event.target.parentElement, false, elements[i]);
             } else {
-                setActiveThumb(event, true, elems[i]);
+                setActiveThumb(event, true, elements[i]);
             }
         });
     });
@@ -93,7 +94,7 @@ export default () => {
         }
 
         enabledTracks.forEach((track) => {
-            setActiveThumb(track, false, elems[track.dataset.count]);
+            setActiveThumb(track, false, elements[track.dataset.count]);
         });
     }
 

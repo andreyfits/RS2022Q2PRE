@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import './styles';
 
 import greeting from './greeting';
@@ -18,6 +19,8 @@ import settings from './settings';
 
 import preloader from './preloader';
 
+import visualizer from './visualizer';
+
 greeting();
 clock();
 setValuesToLocalStorage();
@@ -28,5 +31,6 @@ translate();
 settings();
 preloader();
 
-// alert(`Не успел доделать некоторые моменты. Пожалуйста не проверяйте до вечера 17 августа. Спасибо за понимание.
-//        Если будут вопросы пишите. Мой дискорд andreyfits#0176`);
+document.addEventListener('click', () => {
+    visualizer();
+}, { once: true });
