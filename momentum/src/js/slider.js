@@ -73,7 +73,7 @@ export default () => {
             const url = document.body.style.backgroundImage;
             let imageNum = url.match(/[0-9]{2}/g);
 
-            img.src = `${imgUrl}${timeOfDay}/${correctNumber(imageNum[1], opt)}.jpg`;
+            img.src = `${imgUrl}${timeOfDay}/${correctNumber(imageNum, opt)}.jpg`;
         } else {
             img.src = `${imgUrl}${timeOfDay}/${getRandomNum()}.jpg`;
         }
