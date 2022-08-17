@@ -16,6 +16,8 @@ import translate from './translate';
 
 import settings from './settings';
 
+import preloader from './preloader';
+
 greeting();
 clock();
 setValuesToLocalStorage();
@@ -24,6 +26,7 @@ quotes();
 audioplayer();
 translate();
 settings();
+preloader();
 
-alert(`Не успел доделать некоторые моменты. Пожалуйста не проверяйте до вечера 17 августа. Спасибо за понимание.
-       Если будут вопросы пишите. Мой дискорд andreyfits#0176`);
+// alert(`Не успел доделать некоторые моменты. Пожалуйста не проверяйте до вечера 17 августа. Спасибо за понимание.
+//        Если будут вопросы пишите. Мой дискорд andreyfits#0176`);
