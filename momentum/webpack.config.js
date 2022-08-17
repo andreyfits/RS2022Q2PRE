@@ -17,12 +17,11 @@ const optimization = () => {
             minimize: true,
             splitChunks: {
                 cacheGroups: {
-                    vendor: {
+                    commons: {
+                        test: /[\\/]node_modules[\\/]/,
                         name: 'vendors',
-                        test: /node_modules/,
                         chunks: 'all',
-                        enforce: true
-                    }
+                    },
                 },
             },
             minimizer: [
@@ -68,7 +67,7 @@ const prodPlugins = [
             options: {
                 plugins: [
                     ['gifsicle', {interlaced: true}],
-                    ["mozjpeg", {quality: 100}],
+                    ['mozjpeg', {quality: 100}],
                     ['jpegtran', {progressive: true}],
                     ['optipng', {optimizationLevel: 5}],
                 ],
@@ -88,7 +87,7 @@ module.exports = {
         assetModuleFilename: '[file][ext]'
     },
     resolve: {
-        extensions: ['.js', '.png', '.svg', '.jpeg', '.jpg', '.json', '.html', '.styles', '.scss'],
+        extensions: ['.js', '.png', '.svg', '.jpeg', '.jpg', '.json', '.html', '.css', '.scss', '.mp3'],
         alias: {
             "@styles": `${PATHS.src}/styles`,
         }
@@ -147,7 +146,7 @@ module.exports = {
                 ],
             },
             {
-                test: /.(png|gif|jpe?g|ico|webp|svg|ttf|woff|woff2|otf)$/,
+                test: /.(png|gif|jpe?g|ico|webp|svg|ttf|woff|woff2|otf|mp3)$/,
                 type: 'asset/resource',
                 generator: {
                     filename: './[path][name][ext]',
