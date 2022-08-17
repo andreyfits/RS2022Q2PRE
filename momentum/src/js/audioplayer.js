@@ -109,9 +109,11 @@ export default () => {
         if (audio.muted) {
             mute.classList.add('mute-icon', 'mute');
             mute.classList.remove('volume-icon', 'volume');
+            mute.style.opacity = 0.45;
         } else {
             mute.classList.add('volume-icon', 'volume');
             mute.classList.remove('mute-icon', 'mute');
+            mute.style.opacity = 1;
         }
     });
 

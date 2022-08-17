@@ -4,8 +4,19 @@
         @include flex(row, flex-start);
 
         width: 100%;
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 10px 20px;
+
+        @include medium-desktops {
+            flex-direction: column;
+        }
+
+        @include mobile {
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
         &-range {
             height: 3px;
@@ -25,6 +36,16 @@
                 &:active {
                     transform: scale(1.1);
                 }
+
+                @include media-custom(1600px) {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                @include mobile {
+                    width: 10px;
+                    height: 10px;
+                }
             }
 
             &:hover::-webkit-slider-thumb {
@@ -39,7 +60,7 @@
         &_progress-bar {
             position: relative;
             height: 10px;
-            min-width: 160px;
+            width: 120px;
             background-color: $background-color-white;
             cursor: pointer;
         }
@@ -54,7 +75,7 @@
         }
 
         &_volume-bar {
-            width: 100px;
+            width: 60px;
             height: 10px;
             background: $background-color-white;
             transition: $transition-fast;
@@ -73,7 +94,35 @@
         }
 
         &-song {
-            grid-area: 1 / 1 / 2 / span 6;
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+        }
+
+        &-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            @include widgets {
+                flex-direction: column;
+            }
+        }
+
+        &-currentTime {
+
+            @include medium-desktops {
+                text-align: right;
+            }
+        }
+
+        &-duration {
+
+            @include medium-desktops {
+                text-align: left;
+            }
         }
     }
 }

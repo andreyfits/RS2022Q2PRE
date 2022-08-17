@@ -40,16 +40,19 @@
 
             @include flex;
 
-            margin-left: 150px;
-            width: 50px;
+            width: 40px;
             height: 15px;
             background: $background-color-dark;
             border: 1px solid $border-color-green;
             border-radius: 30px;
             opacity: 0.8;
             box-shadow: 0 0 8px -4px $box-shadow-gray;
-            transition: $transition-long;
+            transition: all 0.85s cubic-bezier(1, 0.18, 0.2, 0.99), 0.45s box-shadow linear, 0.45s opacity linear;
             cursor: pointer;
+
+            @include mobile {
+                margin-left: 0;
+            }
 
             &_state_active {
                 box-shadow: 0 0 8px 1px $background-color-green;
@@ -66,7 +69,7 @@
             background-color: $background-color-white;
             border-radius: 50%;
             cursor: pointer;
-            transition: $transition-long;
+            transition: 0.85s cubic-bezier(1, 0.18, 0.2, 0.99);
             z-index: -100;
         }
     }

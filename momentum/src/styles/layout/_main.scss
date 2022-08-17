@@ -12,11 +12,23 @@
     }
 
     &__time {
-        min-height: 124px;
+        min-height: 125px;
         margin-bottom: 10px;
         font: 100px $font-additional;
-        letter-spacing: -4px;
+        letter-spacing: -5px;
         transition: $transition-long;
+
+        @include medium-desktops {
+            font-size: 80px;
+        }
+
+        @include mobile {
+            min-height: 0;
+        }
+
+        @include widgets {
+            font-size: 55px;
+        }
     }
 
     &__date {
@@ -24,6 +36,11 @@
         font: 24px $font-main;
         margin-bottom: 20px;
         transition: $transition-long;
+
+        @include mobile {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
     }
 
     &__greeting-container {
@@ -34,6 +51,7 @@
         flex-wrap: wrap;
         justify-content: stretch;
         align-items: center;
+        transition: $transition-long;
     }
 
     &__greeting {
@@ -41,6 +59,14 @@
         padding: 10px;
         font-family: $font-main;
         text-align: right;
+
+        @include mobile {
+            font-size: 22px;
+        }
+
+        @include widgets {
+            font-size: 18px;
+        }
     }
 
     &__name {
@@ -56,6 +82,14 @@
 
         &::placeholder {
             opacity: 0.7;
+        }
+
+        @include mobile {
+            font-size: 22px;
+        }
+
+        @include widgets {
+            font-size: 16px;
         }
     }
 }

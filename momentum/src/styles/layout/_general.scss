@@ -18,6 +18,10 @@
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 20px;
+
+    @include mobile {
+        padding: 0 10px;
+    }
 }
 
 body {
@@ -114,6 +118,7 @@ body {
 .hidden {
     opacity: 0 !important;
     z-index: -100;
+    visibility: hidden;
 }
 
 .text-settings {
@@ -140,5 +145,13 @@ body {
 
     &:active {
         opacity: 1;
+    }
+
+    @include mobile {
+        left: 20px;
+    }
+
+    @include widgets {
+        bottom: 20px;
     }
 }

@@ -20,6 +20,14 @@
 
         &-author {
             min-height: 20px;
+
+            @include s-mobile {
+                font-size: 14px;
+            }
+        }
+
+        @include s-mobile {
+            font-size: 14px;
         }
     }
 
@@ -37,9 +45,22 @@
             margin: 0;
             font: 400 18px $font-main;
             line-height: 22px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: $font-color-white;
             text-decoration: none;
+
+            @include widgets {
+                font-size: 16px;
+                line-height: 18px;
+            }
+
+            @include s-mobile {
+                font-size: 14px;
+            }
+        }
+
+        @include widgets {
+            flex-direction: column;
         }
 
         &-author {

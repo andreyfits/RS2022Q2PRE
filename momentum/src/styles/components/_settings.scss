@@ -1,7 +1,7 @@
 .settings {
     &__container {
         width: 100%;
-        max-width: 315px;
+        max-width: 270px;
         position: absolute;
         left: 40px;
         bottom: 90px;
@@ -10,6 +10,15 @@
         background: $background-color-dark;
         box-shadow: 0 0 10px 5px $box-shadow-dark;
         transition: $transition-fast;
+
+        @include mobile {
+            left: 40px;
+            bottom: 60px;
+        }
+
+        @include s-mobile {
+            left: 25px;
+        }
     }
 
     &__heading {
