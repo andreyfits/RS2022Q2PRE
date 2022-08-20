@@ -141,7 +141,7 @@ export default () => {
         getTrack('next');
     });
 
-    audio.addEventListener('click', () => {
+    audio.addEventListener('timeupdate', () => {
         getCurrentTime();
         nextSongAfterEnding();
     });
